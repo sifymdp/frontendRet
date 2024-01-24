@@ -1,0 +1,23 @@
+
+@if(orderDetail){
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="image">
+            <ion-img [src]="orderDetail.img.src" [alt]="orderDetail.img.alt"></ion-img>
+          </div>
+        </ion-col>
+        <ion-col>
+          <h1>{{orderDetail.brand_name}}</h1>
+          <h2>{{orderDetail.product_name}}</h2>
+          <h3>{{orderDetail.unit_cross_quantity}}</h3>
+          <h4>UOM: {{orderDetail.uom}}</h4>
+          <h4>Qty: {{orderDetail.qty}}</h4>
+          <h2>{{orderDetail.rate}}</h2>
+          <div class="btn" id="add-to-cart-sheet">Add</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+}

@@ -1,0 +1,7 @@
+{
+  "name": "sify-retail-ui",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
