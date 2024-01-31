@@ -5,13 +5,14 @@ import { OrderAgainComponent } from 'src/app/component/order-again/order-again.c
 import { TopDealsComponent } from 'src/app/component/top-deals/top-deals.component';
 import { AddToCartBottomSheetComponent } from 'src/app/component/add-to-cart-bottom-sheet/add-to-cart-bottom-sheet.component';
 import { CommonModule } from '@angular/common';
+import { MenuComponent } from 'src/app/component/menu/menu.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonMenu, IonModal, IonImg, OrderAgainComponent, TopDealsComponent, AddToCartBottomSheetComponent, CommonModule],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonMenu, IonModal, IonImg, OrderAgainComponent, TopDealsComponent, AddToCartBottomSheetComponent, CommonModule, MenuComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePage {

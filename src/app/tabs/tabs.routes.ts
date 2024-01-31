@@ -7,14 +7,47 @@ export const routes: Routes = [
     component: TabsPage,
     children: [
         {
-            path: 'home',
-            loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
-        },
-        {
             path: '',
-            redirectTo: '/tabs/home',
+            redirectTo: 'home',
             pathMatch: 'full',
         },
+        {
+          path: 'home',
+          loadComponent: () => import('./tab-home/tab-home.page').then( m => m.TabHomePage)
+        },
+        {
+          path: 'categories',
+          loadComponent: () => import('./tab-categories/tab-categories.page').then( m => m.TabCategoriesPage)
+        },
+        {
+          path: 'cart',
+          loadComponent: () => import('./tab-cart/tab-cart.page').then( m => m.TabCartPage)
+        },
+        {
+          path: 'orders',
+          loadComponent: () => import('./tab-orders/tab-orders.page').then( m => m.TabOrdersPage)
+        },
     ],
+  },
+  {
+    path: '',
+    redirectTo: '/tabs/home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    loadComponent: () => import('./tab-home/tab-home.page').then( m => m.TabHomePage)
+  },
+  {
+    path: 'categories',
+    loadComponent: () => import('./tab-categories/tab-categories.page').then( m => m.TabCategoriesPage)
+  },
+  {
+    path: 'cart',
+    loadComponent: () => import('./tab-cart/tab-cart.page').then( m => m.TabCartPage)
+  },
+  {
+    path: 'orders',
+    loadComponent: () => import('./tab-orders/tab-orders.page').then( m => m.TabOrdersPage)
   },
 ];

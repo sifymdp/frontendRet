@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border">
+<div class="ion-no-border">
   <ion-grid class="main-card">
     <ion-row>
       <ion-col size="auto">
@@ -28,19 +28,48 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <div class="discount">
+    <h6>Get more at discounted price</h6>
+    <div class="show-more" [class.active]="showMore">
+      <div class="less-desc">
+        <ion-accordion-group>
+          <ion-accordion value="first">
+            <ion-item slot="header" color="light">
+              <h2><img src="/assets/imgs/Offer.svg"> Get 35% Off on all flours</h2>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              <h3>Description of the scheme that is very long which can span for one or two lines</h3>
+              <p>Validity</p>
+              <p>01/01/2024 to 30/02/2024</p>
+              <hr>
+              <div class="btn" (click)="showMoreDesc()">View All Products</div>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
+      </div>
+      <div class="more-desc">
+        @for (price of price_details; track price.id) {
+          <div class="card">
+            <h4>₹ {{price.price}}</h4>
+            <h5>Qty: {{price.qty}}</h5>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
   <ion-grid>
     <ion-row>
       <ion-col size="auto">
         <ion-grid>
           <ion-row class="count">
             <ion-col size="auto">
-              <div class="minus btn">-</div>
+              <div class="minus btn" (click)="decrease()">-</div>
             </ion-col>
             <ion-col size="auto">
               <p>40</p>
             </ion-col>
             <ion-col size="auto">
-              <div class="minus btn">+</div>
+              <div class="plus btn" (click)="increase()">+</div>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -51,15 +80,9 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-header>
-<div class="btn2">Add to Cart</div>
-<!-- <ion-content [fullscreen]="true">
-    <ion-button
-      expand="block"
-      size="large"
-      shape="round"
-      color="primary"
-      type="submit">
-      <ion-text>Add to Cart</ion-text>
-    </ion-button>
-</ion-content> -->
+  <div class="btn2" id="open-toast" expand="block" (click)="add()">Add to Cart</div>
+  <!-- <ion-content class="ion-padding">
+    <div class="btn2" id="open-toast" expand="block" (click)="add()">Add to Cart</div>
+    <ion-toast trigger="open-toast" message="Product added to Cart" [duration]="3000" icon="sign check"></ion-toast>
+  </ion-content> -->
+</div>
