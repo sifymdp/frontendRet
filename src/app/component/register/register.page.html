@@ -1,13 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <img src="/assets/imgs/retailcon.png" alt="Description of the image" width="87" height="87">
+  <h1>Register Now</h1>
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <div class="custom-item">
+      <ion-label class="custom-label" position="stacked">Name</ion-label>
+      <div class = 'gap'></div>
+      <ion-input class="custom-input" formControlName="name" required></ion-input>
+    </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <div class="custom-item">
+      <ion-label class="custom-label" position="stacked">Address</ion-label>
+      <div class = 'gap'></div>
+      <ion-input class="custom-input" formControlName="address" required></ion-input>
+    </div>
+
+    <div class="custom-item">
+      <ion-label class="custom-label" position="stacked">Pin Code</ion-label>
+      <div class = 'gap'></div>
+      <ion-input class="custom-input" formControlName="pinCode" required></ion-input>
+    </div>
+
+    <div class="custom-item">
+      <ion-label class="custom-label" position="stacked">Mobile Number</ion-label>
+      <div class = 'gap'></div>
+      <ion-input class="custom-input" formControlName="mobileNumber" type="tel" required></ion-input>
+    </div>
+
+    <div class="custom-item">
+      <ion-label class="custom-label" position="stacked">Alternate Mobile Number</ion-label>
+      <div class = 'gap'></div>
+      <ion-input class="custom-input" formControlName="alternateMobileNumber" type="tel"></ion-input>
+    </div>
+
+    <div class="custom-item">
+      <ion-label class="custom-label" position="stacked">Email</ion-label>
+      <div class = 'gap'></div>
+      <ion-input class="custom-input" formControlName="email" type="email" required></ion-input>
+    </div>
+
+    <button type="submit" style="margin-top: 45px; height: 55px; border-radius: 8px; background-color: #FD9018; color: #fff; width: 100%; font-weight: bold; font-size: 18px;">Register</button>
+    <div class = 'gap'></div>
+    <p>Already registered?<span> Log in</span></p>
+  </form>
 </ion-content>

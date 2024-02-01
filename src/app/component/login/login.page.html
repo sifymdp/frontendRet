@@ -1,13 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <img src="/assets/imgs/retailcon.png" alt="Description of the image" width="87" height="87">
+  <h1>Welcome back!</h1>
+  <h2>Login to your account</h2>
+  <h3>We will send you an one time password to this mobile number</h3>
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+  
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <div class="custom-item">
+      <h4 class="custom-label" position="stacked">Enter Mobile number</h4>
+      <div class = 'gap'></div>
+      <ion-input class="custom-input" formControlName="mobileNumber" type="tel" required></ion-input>
+    </div>
+
+ 
+
+    <button type="submit" style="margin-top: 105px; height: 55px; border-radius: 8px; background-color: #FD9018; color: #fff; width: 100%; font-weight: bold; font-size: 18px;">Get OTP</button>
+    <div class = 'gap'></div>
+    <p>New to Sify Retail?<span> Register Now</span></p>
+  </form>
 </ion-content>

@@ -1,13 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>otp-verification</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">otp-verification</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <h1>OTP Verification</h1>
+  <h2>Enter the OTP sent to +91-9999977778</h2>
+  <form [formGroup]="otpForm" (ngSubmit)="onSubmitOtp()">
+    <div class="otp-container">
+      <ion-input
+        class="otp-input"
+        formControlName="digit1"
+        maxlength="1"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        required
+        (input)="focusNext($event, 'digit2')"
+      ></ion-input>
+      <ion-input
+        class="otp-input"
+        formControlName="digit2"
+        maxlength="1"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        required
+        (input)="focusNext($event, 'digit3')"
+      ></ion-input>
+      <ion-input
+        class="otp-input"
+        formControlName="digit3"
+        maxlength="1"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        required
+        (input)="focusNext($event, 'digit4')"
+      ></ion-input>
+      <ion-input
+        class="otp-input"
+        formControlName="digit4"
+        maxlength="1"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        required
+      ></ion-input>
+      <div class="gap"></div>
+    </div>
+    
+    <p>Didn’t recieved the OTP ?<span> Resend OTP</span></p>
+    <button type="submit" style="margin-top: 260px; height: 50px; border-radius: 8px; background-color: #FD9018; color: #fff; width: 100%; font-weight: bold; font-size: 18px;">Verify OTP</button>
+  </form>
 </ion-content>
