@@ -31,7 +31,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
@@ -49,5 +49,13 @@ export const routes: Routes = [
   {
     path: 'orders',
     loadComponent: () => import('./tab-orders/tab-orders.page').then( m => m.TabOrdersPage)
+  },
+  {
+    path: 'schemes',
+    loadComponent: () => import('../component/schemes/schemes.page').then( m => m.SchemesPage)
+  },
+  {
+    path: 'favourites',
+    loadComponent: () => import('../component/favourites/favourites.page').then( m => m.FavouritesPage)
   },
 ];

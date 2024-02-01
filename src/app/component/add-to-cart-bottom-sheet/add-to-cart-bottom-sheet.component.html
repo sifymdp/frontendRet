@@ -2,8 +2,24 @@
   <ion-grid class="main-card">
     <ion-row>
       <ion-col size="auto">
-        <div class="image">
-          <ion-img src="/assets/imgs/product.png"></ion-img>
+        <div class="image-col">
+          <ion-grid class="offers">
+            <ion-row>
+              <ion-col>
+                @if(order_again.offer){
+                  <h6>{{order_again.offer}}</h6>
+                }
+              </ion-col>
+              <ion-col class="text-right">
+                <button ion-button icon-left clear small (click)="toggleLiked(order_again)">
+                  <ion-icon [src]="order_again.icon"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <div class="image">
+            <ion-img [src]="order_again.img.src" [alt]="order_again.img.alt"></ion-img>
+          </div>
         </div>
       </ion-col>
       <ion-col>

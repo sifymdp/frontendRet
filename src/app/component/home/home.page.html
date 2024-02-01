@@ -97,7 +97,7 @@
               </ion-label>
               <ion-button fill="clear" size="small" color="medium">
                 <ion-text>
-                  View all
+                  <a>View all</a>
                 </ion-text>
               </ion-button>
             </ion-list-header>  
@@ -121,18 +121,16 @@
       @if (top_deals.length > 0) { 
         <div class="top-deals">
           <ion-list lines="none">
-    
             <ion-list-header>
               <ion-label>
                 Top Details
               </ion-label>
               <ion-button fill="clear" size="small" color="medium">
                 <ion-text>
-                  View all
+                  <a>View all</a>
                 </ion-text>
               </ion-button>
             </ion-list-header>  
-        
             <div>
               <swiper-container
                 [modules]="swiperModules"
@@ -154,18 +152,16 @@
       @if (recent_orders.length > 0) { 
         <div class="recent-orders">
           <ion-list lines="none" class="ion-margin-bottom recentJobs">
-    
             <ion-list-header class="ion-margin-bottom">
               <ion-label>
                 Recent Orders
               </ion-label>
               <ion-button fill="clear" size="small" color="medium">
                 <ion-text>
-                  View all
+                  <a>View all</a>
                 </ion-text>
               </ion-button>
-            </ion-list-header> 
-      
+            </ion-list-header>
             @for (rcorder of recent_orders; track rcorder.id) {
               <ion-card>
                 <div class="status" *ngIf="rcorder.status == 'Placed'" style="background-color: #D8EBFF; color: #477AFD;">Placed</div>

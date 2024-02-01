@@ -20,4 +20,12 @@ export class OrderAgainComponent  implements OnInit,AfterViewInit {
     console.log(this.orderDetail)
   }
 
+  toggleLiked(order: any) {
+    if (order.icon === '/assets/imgs/star-liked.svg') {
+      order.icon = '/assets/imgs/star-unliked.svg';
+    } else {
+      order.icon = '/assets/imgs/star-liked.svg';
+    }
+  }
+
 }

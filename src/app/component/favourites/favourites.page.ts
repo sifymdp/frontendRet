@@ -1,72 +1,19 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { MenuComponent } from "../menu/menu.component";
-import { IonicSlides } from '@ionic/angular';
+import { TabsPage } from "../../tabs/tabs.page";
 
 @Component({
-    selector: 'app-categories',
-    templateUrl: './categories.page.html',
-    styleUrls: ['./categories.page.scss'],
+    selector: 'app-favourites',
+    templateUrl: './favourites.page.html',
+    styleUrls: ['./favourites.page.scss'],
     standalone: true,
-    imports: [IonicModule, CommonModule, FormsModule, MenuComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    imports: [IonicModule, CommonModule, FormsModule, MenuComponent, TabsPage]
 })
-export class CategoriesPage implements OnInit {
+export class FavouritesPage implements OnInit {
 
-  swiperModules = [IonicSlides];
-  showMore:boolean = false;
-  categories: any = [
-    {
-      id: 1,
-      img: {
-        src: '/assets/imgs/category.png',
-        alt: 'Category'
-      },
-      name: 'Category 1'
-    },
-    {
-      id: 2,
-      img: {
-        src: 'assets/imgs/category.png',
-        alt: 'Category'
-      },
-      name: 'Category 2'
-    },
-    {
-      id: 3,
-      img: {
-        src: 'assets/imgs/category.png',
-        alt: 'Category'
-      },
-      name: 'Category 3'
-    },
-    {
-      id: 4,
-      img: {
-        src: 'assets/imgs/category.png',
-        alt: 'Category'
-      },
-      name: 'Category 4'
-    },
-    {
-      id: 5,
-      img: {
-        src: 'assets/imgs/category.png',
-        alt: 'Category'
-      },
-      name: 'Category 5'
-    },
-    {
-      id: 6,
-      img: {
-        src: 'assets/imgs/category.png',
-        alt: 'Category'
-      },
-      name: 'Category 6'
-    }
-  ]
   order_again = [
     {
       id: 1,
@@ -129,28 +76,9 @@ export class CategoriesPage implements OnInit {
       qty: '40'
     },
   ]
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-  showMoreDesc(ev: any){
-    this.showMore = !this.showMore;
-  }
-
-  reset(event: any){
-  }
-
-  filterTab(event: any){
-  }
-
-  toggleLiked(order: any) {
-    if (order.icon === '/assets/imgs/star-liked.svg') {
-      order.icon = '/assets/imgs/star-unliked.svg';
-    } else {
-      order.icon = '/assets/imgs/star-liked.svg';
-    }
   }
 
 }

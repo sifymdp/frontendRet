@@ -3,11 +3,11 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tabs',
+    redirectTo: '',
     pathMatch: 'full',
   },
   {
-    path: 'tabs',
+    path: '',
     loadChildren: () => import('./tabs/tabs.routes').then( m => m.routes)
   },
   {
@@ -37,5 +37,13 @@ export const routes: Routes = [
   {
     path: 'otp-verification',
     loadComponent: () => import('./component/otp-verification/otp-verification.page').then( m => m.OtpVerificationPage)
+  },
+  {
+    path: 'schemes',
+    loadComponent: () => import('./component/schemes/schemes.page').then( m => m.SchemesPage)
+  },
+  {
+    path: 'favourites',
+    loadComponent: () => import('./component/favourites/favourites.page').then( m => m.FavouritesPage)
   },
 ];
