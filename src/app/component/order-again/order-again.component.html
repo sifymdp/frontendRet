@@ -1,11 +1,26 @@
-
 @if(orderDetail){
   <ion-card>
     <ion-grid>
       <ion-row>
         <ion-col>
-          <div class="image">
-            <ion-img [src]="orderDetail.img.src" [alt]="orderDetail.img.alt"></ion-img>
+          <div class="image-col">
+            <ion-grid class="offers">
+              <ion-row>
+                <ion-col>
+                  @if(orderDetail.offer){
+                    <h6>{{orderDetail.offer}}</h6>
+                  }
+                </ion-col>
+                <ion-col class="text-right">
+                  <button ion-button icon-left clear small (click)="toggleLiked(orderDetail)">
+                    <ion-icon [src]="orderDetail.icon"></ion-icon>
+                  </button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <div class="image">
+              <ion-img [src]="orderDetail.img.src" [alt]="orderDetail.img.alt"></ion-img>
+            </div>
           </div>
         </ion-col>
         <ion-col>

@@ -16,4 +16,12 @@ export class TopDealsComponent  implements OnInit {
 
   ngOnInit() {}
 
+  toggleLiked(order: any) {
+    if (order.icon === '/assets/imgs/star-liked.svg') {
+      order.icon = '/assets/imgs/star-unliked.svg';
+    } else {
+      order.icon = '/assets/imgs/star-liked.svg';
+    }
+  }
+
 }

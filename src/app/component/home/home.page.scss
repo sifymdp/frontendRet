@@ -7,13 +7,14 @@ ion-content{
     box-shadow: none;
 }
 .head-icon{
-    padding-right: 10px;
+    padding-right: 15px;
 }
 ion-title{
     color: #353535;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: 700;
     font-size: 20px;
+    padding-left: 5px;
 }
 .sc-ion-searchbar-md-h {
     --border-radius: 22px;
@@ -36,15 +37,17 @@ ion-label{
 }
 ion-text{
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 500;
     color: #353535;
+}
+ion-button{
+    text-transform: unset;
 }
 a{
     color: #353535;
-    text-decoration: none;
+    text-decoration: underline;
     &:hover{
         color: #353535;
-        text-decoration: none;
     }
 }
 .home{
@@ -131,6 +134,7 @@ a{
         color: #919191;
         text-align: right;
         cursor: pointer;
+        text-decoration: underline;
         img{
             width: 18px;
             margin-bottom: -5px;

@@ -100,6 +100,7 @@ export class HomePage {
         src: 'assets/imgs/product.png',
         alt: 'product'
       },
+      icon: '/assets/imgs/star-unliked.svg',
       brand_name: 'Fortune',
       product_name: 'Refined Sunflower Oil',
       unit_cross_quantity: '20 ut x 500 ml',
@@ -114,6 +115,7 @@ export class HomePage {
         src: 'assets/imgs/product.png',
         alt: 'product'
       },
+      icon: '/assets/imgs/star-unliked.svg',
       brand_name: 'Fortune',
       product_name: 'Refined Sunflower Oil',
       unit_cross_quantity: '20 ut x 500 ml',
@@ -131,6 +133,7 @@ export class HomePage {
         src: 'assets/imgs/product.png',
         alt: 'product'
       },
+      icon: '/assets/imgs/star-unliked.svg',
       brand_name: 'Fortune',
       product_name: 'Refined Sunflower Oil',
       unit_cross_quantity: '20 ut x 500 ml',
@@ -143,6 +146,7 @@ export class HomePage {
         src: 'assets/imgs/product.png',
         alt: 'product'
       },
+      icon: '/assets/imgs/star-unliked.svg',
       brand_name: 'Fortune',
       product_name: 'Refined Sunflower Oil',
       unit_cross_quantity: '20 ut x 500 ml',

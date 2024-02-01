@@ -1,8 +1,23 @@
-
 @if(topDeal){
   <ion-card>
-    <div class="image">
-      <ion-img [src]="topDeal.img.src" [alt]="topDeal.img.alt"></ion-img>
+    <div class="image-col">
+      <ion-grid class="offers">
+        <ion-row>
+          <ion-col class="text-left">
+            @if(topDeal.offer){
+              <h6>{{topDeal.offer}}</h6>
+            }
+          </ion-col>
+          <ion-col class="text-right">
+            <button ion-button icon-left clear small (click)="toggleLiked(topDeal)">
+              <ion-icon [src]="topDeal.icon"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="image">
+        <ion-img [src]="topDeal.img.src" [alt]="topDeal.img.alt"></ion-img>
+      </div>
     </div>
     <div class="content">
       <h1>{{topDeal.brand_name}}</h1>
