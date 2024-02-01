@@ -46,4 +46,12 @@ export const routes: Routes = [
     path: 'favourites',
     loadComponent: () => import('./component/favourites/favourites.page').then( m => m.FavouritesPage)
   },
+  {
+    path: 'feedback',
+    loadComponent: () => import('./component/feedback/feedback.page').then( m => m.FeedbackPage)
+  },
+  {
+    path: 'feedback-edit',
+    loadComponent: () => import('./component/feedback-edit/feedback-edit.page').then( m => m.FeedbackEditPage)
+  },
 ];
