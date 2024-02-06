@@ -80,4 +80,13 @@ font-size: 12px;
 font-style: normal;
 font-weight: 400;
 line-height: 16px;
+a{
+    color: #477AFD;
+    text-decoration: none;
+    margin-left: 10px;
+    &:hover{
+        color: #477AFD;
+        text-decoration: none;
+    }
+}
 }
