@@ -1,0 +1,144 @@
+ion-content{
+    background-color: #FDFDFD;
+    --ion-background-color: #FDFDFD;
+    --padding-bottom: 100px;
+    --padding-start: 15px;
+    --padding-end: 15px;
+}
+.gap{
+    height: 10px;
+}
+.custom-item {
+    color: #1D1D1D;
+    margin-bottom: 16px; /* Increase space between items */
+    ion-label {
+        color: var(--Grey-1, #666);
+
+/* Style 2/Caption 1 */
+font-family: "Helvetica Neue";
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 133.333% */
+    }
+    ion-input {
+        border-radius: 8px;
+        border: 1px solid var(--Color-Brand-Orange, #FFE1AF);
+        background-color: white;
+   
+    }
+
+    ion-label {
+        --margin-bottom: 8px; /* Increase space between label and field */
+    }
+  .custom-button {
+    height: 48px; /* Increase button height */
+    border-radius: 20px; /* Round button corners */
+  }
+  
+}
+h1 {
+    color: var(--Black-1, #1D1D1D);
+text-align: center;
+
+/* Style 2/Header 1 */
+font-family: "Helvetica Neue";
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; /* 145.455% */
+margin-top: 12px;
+margin-bottom: 25px;
+}
+
+img{
+    margin-top: 50px;
+    align-self: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p{
+    color: var(--Grey-1, #666);
+text-align: center;
+
+/* Style 2/Caption 1 */
+font-family: "Helvetica Neue";
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 133.333% */
+}
+
+span{
+    color: var(--Color-States-Dark-Blue, #477AFD);
+
+/* Style 2/Caption 1 */
+font-family: "Helvetica Neue";
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px;
+}
+
+
+.custom-placeholder {
+    display: inline-block;
+    color: var(--Grey-2, #919191);
+text-align: center;
+/* Style 2/Caption 1 */
+font-family: "Helvetica Neue";
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px;
+margin-right: 150px;
+position: relative; left: 10px;
+  }
+  
+  .custom-file-label {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .custom-file-label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .upload-button,
+  .take-photo-button {
+    border-radius: 5px;
+border: 1px solid var(--Primary, #FD9018);
+background-color: white;
+color: #FD9018;
+height: 40px;
+padding: 10px 20px;
+  }
+
+  .flex-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-container hr {
+    flex: 1;
+    border: 0.2px solid #B8B8B8; /* Adjust the border properties as needed */
+    //margin: 0 10px; /* Adjust the margin as needed */
+  }
+
+  .flex-container p {
+    position: relative;
+    top: 3px;
+    margin-bottom: 8px;
+    //margin: 0 10px; /* Adjust the margin as needed */
+  }
+  
