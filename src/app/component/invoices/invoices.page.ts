@@ -5,13 +5,13 @@ import { IonicModule } from '@ionic/angular';
 import { MenuComponent } from "../menu/menu.component";
 
 @Component({
-    selector: 'app-orders',
-    templateUrl: './orders.page.html',
-    styleUrls: ['./orders.page.scss'],
+    selector: 'app-invoices',
+    templateUrl: './invoices.page.html',
+    styleUrls: ['./invoices.page.scss'],
     standalone: true,
     imports: [IonicModule, CommonModule, FormsModule, MenuComponent]
 })
-export class OrdersPage implements OnInit {
+export class InvoicesPage implements OnInit {
 
   view_state = "cardview"
   angular: any;

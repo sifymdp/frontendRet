@@ -8,7 +8,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="title">
-      Categories
+      My Invoices
     </ion-title>
     <ion-buttons slot="end" class="head-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -24,73 +24,70 @@
 </ion-header>
 
 <ion-content>
-  <div class="categories">
-    <div class="show-more" [class.active]="showMore">
-      <ion-grid class="less-desc">
-        <ion-row>
-          @for (category of categories; track category.id) {
-            <div class="card" (click)="showMoreDesc($event)">
-              <h2>{{category.name}}</h2>
-              <img [src]="category.img.src" [alt]="category.img.alt">
-            </div>
-          }
-        </ion-row>
-      </ion-grid>
-      <div class="more-desc">
-        <h3>108 Products</h3>
-        <div class="flex">
-          <button class="tab btn" id="open-filter"><ion-icon src="/assets/imgs/Filter Sort.svg"></ion-icon></button>
-          <button class="tab btn" (click)="filterTab($event)">All</button>
-          <button class="tab btn" (click)="filterTab($event)">Newest</button>
-          <button class="tab btn" (click)="filterTab($event)">Popular</button>
-          <button class="tab btn" (click)="filterTab($event)">Relevance</button>
-          <button class="tab btn" (click)="filterTab($event)"><p>Price: Low to high</p></button>
-          <button class="tab btn" (click)="filterTab($event)"><p>Price: High to Low</p></button>
-        </div>
-        <div class="items">
-          @for (order of order_again; track order.id) {
-            <ion-card>
-              <ion-grid>
-                <ion-row>
-                  <ion-col size="auto">
-                    <div class="image-col">
-                      <div class="text-right">
-                        <button ion-button icon-left clear  (click)="toggleLiked(order)">
-                          <ion-img [src]="order.icon"></ion-img>
-                        </button>
-                      </div>
-                      <div class="image">
-                        <ion-img [src]="order.img.src" [alt]="order.img.alt"></ion-img>
-                      </div>
-                    </div>
-                  </ion-col>
-                  <ion-col>
-                    <h1>{{order.brand_name}}</h1>
-                    <h2>{{order.product_name}}</h2>
-                    <h3>{{order.unit_cross_quantity}}</h3>
-                    <h4>UOM: {{order.uom}}</h4>
-                    <h4>Qty: {{order.qty}}</h4>
-                    <h2>{{order.rate}}</h2>
-                    <div class="btn" id="add-to-cart-sheet">Add</div>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-card>
-          }
-        </div>
-      </div>
+  <div class="view-state text-right">
+    <span (click)="changeViewstate('cardview')">
+      <img src="/assets/imgs/Chart view.svg">
+    </span>
+    <span (click)="changeViewstate('listview')">
+      <img src="/assets/imgs/List view.svg">
+    </span>
+  </div>
+  
+  <div class="cardview" *ngIf="view_state == 'cardview'">
+    <h2>Recent Invoices</h2>
+    <div ng-controller="chartCtrl">
+      <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series">
+      </canvas>
+    </div>
+    <div class="items">
+      <ul>
+        <li><span style="background-color: #97ECFF;"></span> SI-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #97FFD3;"></span> SI-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #E3FF74;"></span> SI-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #FFE297;"></span> Invoice No</li>
+        <li><span style="background-color: #FCBB9F;"></span> SO-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #4FA1FE;"></span> SI-01 Jan 24-002302034523</li>
+      </ul>
+    </div>
+  </div>
+  <div class="listview" *ngIf="view_state == 'listview'">
+    <h2>Orders</h2>
+    <ul class="flex">
+      <li class="tab btn" (click)="filterTab($event)"><p>All Orders</p></li>
+      <li class="tab btn" (click)="filterTab($event)">Placed</li>
+      <li class="tab btn" (click)="filterTab($event)">Invoiced</li>
+      <li class="tab btn" (click)="filterTab($event)"><p>In Transit</p></li>
+      <li class="tab btn" (click)="filterTab($event)">Delivered</li>
+      <li class="tab btn" (click)="filterTab($event)">Cancelled</li>
+    </ul>
+    <div class="recent-orders">
+      @for (rcorder of recent_orders; track rcorder.id) {
+        <ion-card>
+          <div class="status" *ngIf="rcorder.status == 'Placed'" style="background-color: #D8EBFF; color: #477AFD;">Placed</div>
+          <div class="status" *ngIf="rcorder.status == 'Delivered'" style="background-color: #E6FFCD; color: #3D9436;">Delivered</div>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <h2>Order ID : {{rcorder.order_id}}</h2>
+              </ion-col>
+              <ion-col>
+                <h3>{{rcorder.rate}}</h3>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <h4>{{rcorder.date}}</h4>
+          <ion-grid class="action">
+            <ion-row>
+              <ion-col>
+                <h5>{{rcorder.items_number}} Items</h5>
+              </ion-col>
+              <ion-col>
+                <div class="btn">View Details <img src="/assets/imgs/nav-arrow-right.svg"></div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      }
     </div>
   </div>
 </ion-content>
-
-<ion-modal
-#add_to_cart_modal
-trigger="open-filter"
-cssClass="inline_modal"
-(ionModalDidDismiss)="reset($event)"
-[breakpoints]="[0.1, 0.5, 0.9]"
-[initialBreakpoint]="0.5">
-<ng-template>
-
-</ng-template>
-</ion-modal>

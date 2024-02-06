@@ -33,11 +33,46 @@
               <ion-img [src]="scheme.img.src" [alt]="scheme.img.alt"></ion-img>
             </div>
           </ion-col>
+          <ion-col>
+            <div class="content">
+              <div class="flex1">
+                <div>
+                  <h2>Get 50% Off </h2>
+                  <h3>On all Flours & Pulses</h3>
+                </div>
+                <div id="schemes-details"><img src="/assets/imgs/info.svg"></div>
+              </div>
+              <div class="flex2">
+                <div>
+                  <h4>Valid till</h4>
+                  <h5>31/01/2024</h5>
+                </div>
+                <a>View Products <img src="/assets/imgs/Vector.svg"></a>
+              </div>
+            </div>
+          </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card>
   }
 </ion-content>
+
+<ion-modal #modal trigger="schemes-details" cssClass="inline_modal" (ionModalDidDismiss)="reset($event)" [breakpoints]="[0.1, 0.3, 0.3]" [initialBreakpoint]="0.3">
+  <ng-template>
+    <div class="schemes-details">
+      <div class="flex">
+        <h2>Schemes details</h2>
+        <a (click)="modal.dismiss()"><img src="/assets/imgs/Close.svg"></a>
+      </div>
+      <h3>Get 45% off up to ₹5000 using selected cards.</h3>
+      <p>Valid on total value of items worth ₹10,000 or more.</p>
+      <ul>
+        <li><img src="/assets/imgs/check filled.svg"> Offer valid once per day & thrice per calendar month.</li>
+        <li><img src="/assets/imgs/check filled.svg"> Other T&Cs may apply.</li>
+      </ul>
+    </div>
+  </ng-template>
+</ion-modal>
 
 <!-- <ion-tabs>
   <app-tabs></app-tabs>

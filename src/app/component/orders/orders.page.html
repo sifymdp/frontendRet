@@ -22,3 +22,76 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+  <div class="view-state text-right">
+    <span (click)="changeViewstate('cardview')">
+      <img src="/assets/imgs/Chart view.svg">
+    </span>
+    <span (click)="changeViewstate('listview')">
+      <img src="/assets/imgs/List view.svg">
+    </span>
+  </div>
+  
+  <div class="cardview" *ngIf="view_state == 'cardview'">
+    <h2>Recent Orders</h2>
+    <div ng-controller="chartCtrl">
+      <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series">
+      </canvas>
+    </div>
+    <div class="items">
+      <ul>
+        <li><span style="background-color: #97ECFF;"></span> SO-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #97FFD3;"></span> SO-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #E3FF74;"></span> SO-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #FFE297;"></span> Order ID</li>
+        <li><span style="background-color: #FCBB9F;"></span> SO-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #FF9797;"></span> SO-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #4FA1FE;"></span> SO-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #9997FF;"></span> SO-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #E497FF;"></span> SO-01 Jan 24-002302034523</li>
+        <li><span style="background-color: #FF97D5;"></span> SO-01 Jan 24-002302034523</li>
+      </ul>
+    </div>
+  </div>
+  <div class="listview" *ngIf="view_state == 'listview'">
+    <h2>Orders</h2>
+    <ul class="flex">
+      <li class="tab btn" (click)="filterTab($event)"><p>All Orders</p></li>
+      <li class="tab btn" (click)="filterTab($event)">Placed</li>
+      <li class="tab btn" (click)="filterTab($event)">Invoiced</li>
+      <li class="tab btn" (click)="filterTab($event)"><p>In Transit</p></li>
+      <li class="tab btn" (click)="filterTab($event)">Delivered</li>
+      <li class="tab btn" (click)="filterTab($event)">Cancelled</li>
+    </ul>
+    <div class="recent-orders">
+      @for (rcorder of recent_orders; track rcorder.id) {
+        <ion-card>
+          <div class="status" *ngIf="rcorder.status == 'Placed'" style="background-color: #D8EBFF; color: #477AFD;">Placed</div>
+          <div class="status" *ngIf="rcorder.status == 'Delivered'" style="background-color: #E6FFCD; color: #3D9436;">Delivered</div>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <h2>Order ID : {{rcorder.order_id}}</h2>
+              </ion-col>
+              <ion-col>
+                <h3>{{rcorder.rate}}</h3>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <h4>{{rcorder.date}}</h4>
+          <ion-grid class="action">
+            <ion-row>
+              <ion-col>
+                <h5>{{rcorder.items_number}} Items</h5>
+              </ion-col>
+              <ion-col>
+                <div class="btn">View Details <img src="/assets/imgs/nav-arrow-right.svg"></div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      }
+    </div>
+  </div>
+</ion-content>

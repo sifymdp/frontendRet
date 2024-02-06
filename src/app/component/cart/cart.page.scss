@@ -56,6 +56,11 @@ a{
     }
     .items{
         padding: 5px;
+        hr{
+            border: 1px solid #EDEDED;
+            height: 0;
+            margin: 10px;
+        }
     }
     .details{
         h1{
@@ -115,11 +120,6 @@ a{
                 width: 70px;
             }
         }
-    }
-    hr{
-        border: 1px solid #EDEDED;
-        height: 0;
-        margin: 10px;
     }
     .price{
         h3{
@@ -209,6 +209,51 @@ a{
         font-weight: 700;
         padding: 10px;
         margin: 30px 5px 20px 5px;
+    }
+}
+.summary{
+    padding: 20px 0 30px 0;
+    h2{
+        font-size: 16px;
+        font-weight: 700;
+        color: #494949;
+    }
+    h3{
+        font-size: 12px;
+        font-weight: 400;
+        color: #494949;
+        margin-bottom: 10px;
+        span{
+            color: #1D1D1D;
+        }
+    }
+    .card{
+        border: 1px solid #FFE9D0;
+        background-color: #FFFFFF;
+        box-shadow: 0px 4px 50px 0px #0000000A;
+        border-radius: 6px;
+        padding: 20px;
+    }
+    h4{
+        font-size: 14px;
+        font-weight: 400;
+        color: #353535;
+        margin-bottom: 15px;
+    }
+    h5{
+        font-size: 16px;
+        font-weight: 700;
+        color: #353535;
+        margin-bottom: 0;
+    }
+    hr{
+        border: 1px solid #EDEDED;
+        height: 0;
+        margin: 0 0 15px 0;
+    }
+    .flex{
+        align-items: center;
+        justify-content: space-between;
     }
 }
 .place-order{

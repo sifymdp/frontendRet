@@ -41,4 +41,7 @@ export class SchemesPage implements OnInit {
   ngOnInit() {
   }
 
+  reset(event: any){
+  }
+
 }

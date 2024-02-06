@@ -54,4 +54,44 @@ export const routes: Routes = [
     path: 'feedback-edit',
     loadComponent: () => import('./component/feedback-edit/feedback-edit.page').then( m => m.FeedbackEditPage)
   },
+  {
+    path: 'invoices',
+    loadComponent: () => import('./component/invoices/invoices.page').then( m => m.InvoicesPage)
+  },
+  {
+    path: 'invoice-details',
+    loadComponent: () => import('./component/invoice-details/invoice-details.page').then( m => m.InvoiceDetailsPage)
+  },
+  {
+    path: 'scheme-products',
+    loadComponent: () => import('./component/scheme-products/scheme-products.page').then( m => m.SchemeProductsPage)
+  },
+  {
+    path: 'distributor-details',
+    loadComponent: () => import('./component/distributor-details/distributor-details.page').then( m => m.DistributorDetailsPage)
+  },
+  {
+    path: 'settings',
+    loadComponent: () => import('./component/settings/settings.page').then( m => m.SettingsPage)
+  },
+  {
+    path: 'about-us',
+    loadComponent: () => import('./component/about-us/about-us.page').then( m => m.AboutUsPage)
+  },
+  {
+    path: 'terms-and-conditions',
+    loadComponent: () => import('./component/terms-and-conditions/terms-and-conditions.page').then( m => m.TermsAndConditionsPage)
+  },
+  {
+    path: 'privacy-policy',
+    loadComponent: () => import('./component/privacy-policy/privacy-policy.page').then( m => m.PrivacyPolicyPage)
+  },
+  {
+    path: 'version',
+    loadComponent: () => import('./component/version/version.page').then( m => m.VersionPage)
+  },
+  {
+    path: 'notifications',
+    loadComponent: () => import('./component/notifications/notifications.page').then( m => m.NotificationsPage)
+  },
 ];
