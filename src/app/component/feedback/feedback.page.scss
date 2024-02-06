@@ -1,0 +1,89 @@
+
+ 
+ h1{
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    p{
+        font-size: 14px;
+        font-weight: 400;
+        color: #494949;
+        display: flex;
+        align-items: center;
+        img{
+            padding-right: 5px;
+        }
+    }
+    h2{
+        font-size: 16px;
+        font-weight: 400;
+        color: #1D1D1D;
+        display: flex;
+        align-items: center;
+        img{
+            padding-right: 12px;
+            width: 30px;
+            height: 20px;
+        }
+    }
+    hr{
+        border: 1px solid rgba(0, 0, 0, 0.14);
+        height: 0;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .ion-color-light {
+        --ion-color-base: #FFE1AF !important;
+        --ion-color-contrast: #1D1D1D !important;
+        --ion-color-light-contrast: #1D1D1D;
+        --ion-color-shade: #FFE1AF !important;
+        align-items: baseline;
+    }
+
+    .ion-color-dark {
+        --ion-color-base: #ffffff !important;
+        --ion-color-contrast: #1D1D1D !important;
+        --ion-color-light-contrast: #1D1D1D;
+        --ion-color-shade: #ffffff !important;
+        align-items: baseline;
+      
+        /* Additional styles */
+      
+      }
+  
+    .parent-accordion {
+        background-color: #fff;
+        border-radius: 6px;
+        border: 1px solid #FFE1AF;
+        background: var(--White, #FFF);
+        display: flex;
+        padding: 12px 23px 23px 23px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        /* Set the background color for the parent accordion to white */
+      }
+
+      .card{
+        margin: 10px;
+      }
+      
+      .nested-accordion {
+        background-color: #FFE1AF; /* Set the background color for the nested accordion as before */
+      }
+
+      .image-button {
+        cursor: pointer;
+        position: fixed;
+        background-color: white;
+        right: 20px; /* Adjust the distance from the right edge */
+        bottom: 20px;
+        padding: 0px;
+      }
+      
+      .button-icon {
+        margin-left: 10px; /* Adjust the spacing between text and image */
+      }
+      
