@@ -35,9 +35,22 @@
       <li><a href="/feedback"><img src="/assets/imgs/feedback.svg"> Feedback</a></li>
       <li><a href="/distributor-details"><img src="/assets/imgs/distributor.svg"> Distributor Details</a></li>
       <li><a href="/settings"><img src="/assets/imgs/settings.svg"> Settings</a></li>
-      <li><a href="/about-us"><img src="/assets/imgs/about.svg"> About Us</a></li>
-      <li><a href="/terms-and-conditions"><img src="/assets/imgs/T&C.svg"> Terms & Conditions</a></li>
-      <li><a href="/privacy-policy"><img src="/assets/imgs/privacy policy.svg"> Privacy Policy</a></li>
+      <li class="general-info">
+        <ion-accordion-group>
+          <ion-accordion value="first">
+            <ion-item slot="header" color="light">
+              <ion-label><img src="/assets/imgs/about.svg"> General Info</ion-label>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              <ul>
+                <li><a href="/about-us"><img src="/assets/imgs/user-group.svg"> About Us</a></li>
+                <li><a href="/terms-and-conditions"><img src="/assets/imgs/T&C.svg"> Terms & Conditions</a></li>
+                <li><a href="/privacy-policy"><img src="/assets/imgs/privacy policy.svg"> Privacy Policy</a></li>
+              </ul>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
+      </li>
       <li><a href="/version"><img src="/assets/imgs/version.svg"> Version</a></li>
     </ul>
     <ul>
