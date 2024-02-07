@@ -37,7 +37,7 @@
     <div class="custom-item">
       <ion-label class="custom-label" position="stacked">Enter the Feedback</ion-label>
       <div class = 'gap'></div>
-      <ion-input class="custom-input" style="height: 160px;" formControlName="address" required></ion-input>
+      <ion-input class="custom-input" class = "v1"  formControlName="address" required></ion-input>
     </div>
 
     <div class="custom-item">
@@ -45,43 +45,36 @@
       <div class = 'gap'></div>
       </div>
 
-    <div class="custom-input" style="border-radius: 8px;
-    border: 1px dashed var(--BG, var(--bg-color));
-    background: var(--White, #FFF);">
+    <div class="custom-input" class="pic" >
       
       <!-- File Input and Browse Button -->
       <label for="imageInput" class="custom-file-label">
-        <div style="float: left; display: flex; flex-direction: column; ">
-          <div style="background-color: var(--offers-color); width: 120px;
-          height: 120px; margin: 15px; margin-top: 30px;">
-          <img src="/assets/imgs/Group1.svg" alt="Description of the image" width="50" height="50" style="position: relative; top: -17%;" >
+        <div class="con1" >
+          <div class="con2" >
+          <img src="/assets/imgs/Group1.svg" alt="Description of the image" width="50" height="50"  >
         </div>
         <label class="custom-placeholder" for="imageInput">Jpg, png less than 100kb</label>
         <input type="file" accept="image/*" id="imageInput" class="custom-input" style="height: 160px;" class="custom-input">
         </div>
-        <div style="display: flex; flex-direction: column; position: relative; right: 17%">
+        <div class="con3">
           <!-- Take Photo Button -->
-          <div style = 'height: 35px;'></div>
+       
       <button type="button" class="take-photo-button">Take Photo</button>
-      <div style = 'height: 20px;'></div>
+      <div class = "v3"></div>
       <div class="flex-container">
         <hr>
         <p>or</p>
         <hr>
       </div>
-      <div style = 'height: 20px;'></div>
-      <span style="color: #3C3C3C; position: relative; left: 10px;" >  Browse from files  </span>
+      <div class = "v3"></div>
+      <span >  Browse from files  </span>
       </div>
       </label>
-    
-    
-    
-      <!--  
-    <img id="selectedImage" class="selected-image" alt="Selected Image"> -->
+
     </div>
     
 
 
-    <button type="submit" style="margin-top: 45px; height: 55px; border-radius: 8px; background-color: var(--primary-color); color: #fff; width: 100%; font-weight: bold; font-size: 18px;">Submit</button>
+    <button type="submit">Submit</button>
   </form>
 </ion-content>
