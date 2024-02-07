@@ -23,7 +23,7 @@ line-height: 16px; /* 133.333% */
     }
     ion-input {
         border-radius: 8px;
-        border: 1px solid #FFE1AF;
+        border: 1px solid var(--bg-color);
         background: var(--BG, #FDFDFD);
    
     }

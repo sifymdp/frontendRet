@@ -40,9 +40,9 @@ ion-grid{
     padding: 0;
 }
 .btn{
-    border: 1px solid #FD9018;
+    border: 1px solid var(--primary-color);
     border-radius: 6px;
-    color: #FD9018;
+    color: var(--primary-color);
     font-size: 14px;
     font-weight: 700;
     padding: 8px 24px;

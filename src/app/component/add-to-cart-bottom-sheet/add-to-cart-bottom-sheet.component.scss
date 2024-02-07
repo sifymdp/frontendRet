@@ -72,19 +72,19 @@ p{
     border-radius: 0px;
 }
 .minus{
-    background-color: #FD9018;
+    background-color: var(--primary-color);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 .plus{
-    background-color: #FD9018;
+    background-color: var(--primary-color);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 .btn2{
     font-size: 14px;
     font-weight: 700;
-    background-color: #FD9018;
+    background-color: var(--primary-color);
     color: #FFFFFF;
     text-align: center;
     padding: 10px 10px;
@@ -152,7 +152,7 @@ select{
     }
 }
 .count{
-    border: 1px solid #FD9018;
+    border: 1px solid var(--primary-color);
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -199,14 +199,14 @@ select{
         margin-bottom: 20px;
     }
     .ion-color-light {
-        --ion-color-base: #FFE9D0 !important;
+        --ion-color-base: var(--offers-color) !important;
         --ion-color-contrast: #1D1D1D !important;
         --ion-color-light-contrast: #1D1D1D;
-        --ion-color-shade: #FFE9D0 !important;
+        --ion-color-shade: var(--offers-color) !important;
         align-items: baseline;
     }
     ion-accordion{
-        background-color: #FFE9D0;
+        background-color: var(--offers-color);
         margin: 0 15px 30px 15px;
         width: 93%;
         border-radius: 6px;

@@ -35,10 +35,10 @@
         margin-bottom: 20px;
     }
     .ion-color-light {
-        --ion-color-base: #FFE1AF !important;
+        --ion-color-base: var(--bg-color) !important;
         --ion-color-contrast: #1D1D1D !important;
         --ion-color-light-contrast: #1D1D1D;
-        --ion-color-shade: #FFE1AF !important;
+        --ion-color-shade: var( --bg-color) !important;
         align-items: baseline;
     }
 
@@ -56,7 +56,7 @@
     .parent-accordion {
         background-color: #fff;
         border-radius: 6px;
-        border: 1px solid #FFE1AF;
+        border: 1px solid var(--bg-color);
         background: var(--White, #FFF);
         display: flex;
         padding: 12px 23px 23px 23px;
@@ -71,7 +71,7 @@
       }
       
       .nested-accordion {
-        background-color: #FFE1AF; /* Set the background color for the nested accordion as before */
+        background-color: var(--bg-color); /* Set the background color for the nested accordion as before */
       }
 
       .image-button {

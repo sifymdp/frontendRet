@@ -8,7 +8,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="title">
-      Categories
+      Feedback
     </ion-title>
     <ion-buttons slot="end" class="head-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -46,13 +46,13 @@
       </div>
 
     <div class="custom-input" style="border-radius: 8px;
-    border: 1px dashed var(--BG, #FFE1AF);
+    border: 1px dashed var(--BG, var(--bg-color));
     background: var(--White, #FFF);">
       
       <!-- File Input and Browse Button -->
       <label for="imageInput" class="custom-file-label">
         <div style="float: left; display: flex; flex-direction: column; ">
-          <div style="background-color: #FFE9D0; width: 120px;
+          <div style="background-color: var(--offers-color); width: 120px;
           height: 120px; margin: 15px; margin-top: 30px;">
           <img src="/assets/imgs/Group1.svg" alt="Description of the image" width="50" height="50" style="position: relative; top: -17%;" >
         </div>
@@ -82,6 +82,6 @@
     
 
 
-    <button type="submit" style="margin-top: 45px; height: 55px; border-radius: 8px; background-color: #FD9018; color: #fff; width: 100%; font-weight: bold; font-size: 18px;">Submit</button>
+    <button type="submit" style="margin-top: 45px; height: 55px; border-radius: 8px; background-color: var(--primary-color); color: #fff; width: 100%; font-weight: bold; font-size: 18px;">Submit</button>
   </form>
 </ion-content>

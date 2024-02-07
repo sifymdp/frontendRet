@@ -60,7 +60,7 @@ line-height: 24px; /* 150% */
         width: 100%;
         font-weight: bold;
         font-size: 18px;
-        background: var(--Color-Brand-Orange, #FD9018);
+        background: var(--Color-Brand-Orange, var(--primary-color));
       }
   
       p {
@@ -80,7 +80,7 @@ line-height: 24px; /* 150% */
     width: 72px; /* Adjust the width based on your design */
     height: 44px; /* Adjust the height based on your design */
     border-radius: 8px;
-    border: 1px solid #FFE1AF;
+    border: 1px solid var(--bg-color);
     background: var(--BG, #FDFDFD);
     text-align: center;
     font-size: 22px; /* Adjust the font size based on your design */

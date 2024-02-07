@@ -39,14 +39,14 @@
     }
     ion-header{
         .ion-color-light {
-            --ion-color-base: #FFE1AF !important;
+            --ion-color-base: var(--bg-color) !important;
             --ion-color-contrast: #1D1D1D !important;
             --ion-color-light-contrast: #1D1D1D;
-            --ion-color-shade: #FFE1AF !important;
+            --ion-color-shade: var(--bg-color) !important;
             align-items: baseline;
         }
         ion-accordion{
-            background-color: #FFE1AF;
+            background-color: var(--bg-color);
         }
         .ion-padding {
             padding-top: 0;
