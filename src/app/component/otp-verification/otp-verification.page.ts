@@ -28,17 +28,7 @@ export class OtpVerificationPage implements OnInit {
     });
   }
 
-  focusNext(event: any, nextInput: string): void {
-    const maxLength = event.target.maxLength;
-    const currentLength = event.target.value.length;
-  
-    if (currentLength === maxLength) {
-      const nextElement = document.getElementsByName(nextInput)[0];
-      if (nextElement) {
-        nextElement.focus();
-      }
-    }
-  }
+
 
   
 
