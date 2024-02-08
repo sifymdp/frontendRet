@@ -64,7 +64,9 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
-        /* Set the background color for the parent accordion to white */
+            box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
       }
 
       .card{
@@ -88,3 +90,13 @@
         margin-left: 10px; /* Adjust the spacing between text and image */
       }
       
+
+      .header-md {
+        box-shadow: none;
+}
+
+
+ion-content{
+  background-color: #FDFDFD;
+  --ion-background-color: #FDFDFD;
+}
