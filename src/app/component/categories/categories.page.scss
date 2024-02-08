@@ -79,22 +79,8 @@ a{
         margin-top: 15px;
         margin-bottom: 20px;
     }
-    .flex{
-        display: flex;
-        align-items: center;
-        overflow: scroll;
-    }
-    .tab{
-        margin-right: 10px;
-        ion-icon{
-            width: 30px;
-            height: 20px;
-        }
-        p{
-            margin-bottom: 0;
-            width: 120px;
-            text-align: center;
-        }
+    .filterTab{
+        text-align: center;
     }
     .btn:nth-child(1){
         border: 0;
@@ -109,6 +95,18 @@ a{
         font-size: 14px;
         font-weight: 400;
         color: #1D1D1D;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        ion-icon{
+            width: 30px;
+            height: 20px;
+            margin-bottom: -5px;
+        }
+        p{
+            margin-bottom: 0;
+            width: 120px;
+            text-align: center;
+        }
     }
     .items{
         ion-card{
@@ -150,11 +148,11 @@ a{
         }
         .btn{
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 400;
             width: 100%;
             border: 1px solid var(--primary-color);
             background-color: #fff;
-            color: var(--primary-color);
+            color: #353535;
             text-align: center;
             padding: 8px 10px;
             border-radius: 6px;
@@ -251,6 +249,7 @@ a{
         border-radius: 6px;
         font-size: 14px;
         font-weight: 700;
+        color: #666666;
         cursor: pointer;
         padding: 8px 20px;
         text-align: center;
@@ -258,10 +257,8 @@ a{
     }
     .primary{
         background-color: var(--primary-color);
-        color: #FFFFFF;
     }
     .secondary{
         background-color: #FFFFFF;
-        color: var(--primary-color);
     }
 }

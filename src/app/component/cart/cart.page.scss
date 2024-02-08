@@ -155,7 +155,7 @@ a{
             font-size: 14px;
             font-weight: 700;
             width: 100%;
-            color: #FFFFFF;
+            color: #666666;
             text-align: center;
             padding: 6px 12px 10px 12px;
             border-radius: 0px;
@@ -202,7 +202,7 @@ a{
     .btn2{
         border: 1px solid var(--primary-color);
         border-radius: 6px;
-        color: var(--primary-color);
+        color: #666666;
         text-align: center;
         font-size: 14px;
         font-weight: 700;
@@ -263,7 +263,7 @@ a{
         background-color: var(--primary-color);
         border-radius: 6px;
         padding: 10px;
-        color: #FFFFFF;
+        color: #666666;
         text-align: center;
         font-size: 14px;
         font-weight: 700;
@@ -300,17 +300,16 @@ a{
         border-radius: 6px;
         font-size: 14px;
         font-weight: 700;
+        color: #666666;
         cursor: pointer;
         padding: 12px;
         margin-bottom: 20px;
     }
     .primary{
         background-color: var(--primary-color);
-        color: #FFFFFF;
     }
     .secondary{
         background-color: #FFFFFF;
-        color: var(--primary-color);
     }
 }
 ion-modal > .ion-page {

@@ -89,26 +89,9 @@ a{
         color: #353535;
         margin-top: -20px;
     }
-    ul{
-        list-style: none;
-        padding-left: 0;
-    }
-    li{
-        p{
-            margin-bottom: 0;
-            width: 70px;
-            text-align: center;
-        }
-    }
-    .flex{
-        display: flex;
-        align-items: center;
-        overflow: scroll;
-    }
-    .tab{
-        margin-right: 10px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+    .filterTab{
+        text-align: center;
+        padding-top: 15px;
     }
     .btn{
         border: 1px solid #D4D4D4;
@@ -118,6 +101,13 @@ a{
         font-size: 14px;
         font-weight: 400;
         color: #919191;
+        margin-right: 10px;
+        margin-bottom: 8px;
+        p{
+            margin-bottom: 0;
+            width: 70px;
+            text-align: center;
+        }
     }
 }
 .chart{

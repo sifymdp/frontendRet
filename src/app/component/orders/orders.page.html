@@ -30,14 +30,14 @@
   </div>
   <div class="listview" *ngIf="view_state == 'listview'">
     <h2>Orders</h2>
-    <ul class="flex">
-      <li class="tab btn" (click)="filterTab($event)"><p>All Orders</p></li>
-      <li class="tab btn" (click)="filterTab($event)">Placed</li>
-      <li class="tab btn" (click)="filterTab($event)">Invoiced</li>
-      <li class="tab btn" (click)="filterTab($event)"><p>In Transit</p></li>
-      <li class="tab btn" (click)="filterTab($event)">Delivered</li>
-      <li class="tab btn" (click)="filterTab($event)">Cancelled</li>
-    </ul>
+    <div class="filterTab">
+      <button class="btn" (click)="filterTab($event)"><p>All Orders</p></button>
+      <button class="btn" (click)="filterTab($event)">Placed</button>
+      <button class="btn" (click)="filterTab($event)">Invoiced</button>
+      <button class="btn" (click)="filterTab($event)"><p>In Transit</p></button>
+      <button class="btn" (click)="filterTab($event)">Delivered</button>
+      <button class="btn" (click)="filterTab($event)">Cancelled</button>
+    </div>
     <div class="recent-orders">
       @for (rcorder of recent_orders; track rcorder.id) {
         <ion-card>

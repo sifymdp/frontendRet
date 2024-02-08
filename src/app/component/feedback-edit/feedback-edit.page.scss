@@ -11,14 +11,10 @@ ion-content{
     color: #1D1D1D;
     margin-bottom: 16px; /* Increase space between items */
     ion-label {
-        color: var(--Grey-1, #666);
-
-/* Style 2/Caption 1 */
-font-family: "Helvetica Neue";
-font-size: 12px;
-font-style: normal;
+        color: #353535;
+font-size: 14px;
 font-weight: 400;
-line-height: 16px; /* 133.333% */
+line-height: 16px;
     }
     ion-input {
         border-radius: 8px;
@@ -41,7 +37,6 @@ h1 {
 text-align: center;
 
 /* Style 2/Header 1 */
-font-family: "Helvetica Neue";
 font-size: 22px;
 font-style: normal;
 font-weight: 700;
@@ -63,7 +58,6 @@ p{
 text-align: center;
 
 /* Style 2/Caption 1 */
-font-family: "Helvetica Neue";
 font-size: 12px;
 font-style: normal;
 font-weight: 400;
@@ -74,7 +68,6 @@ span{
     color: var(--Color-States-Dark-Blue, #477AFD);
 
 /* Style 2/Caption 1 */
-font-family: "Helvetica Neue";
 font-size: 12px;
 font-style: normal;
 font-weight: 400;
@@ -87,7 +80,6 @@ line-height: 16px;
     color: var(--Grey-2, #919191);
 text-align: center;
 /* Style 2/Caption 1 */
-font-family: "Helvetica Neue";
 font-size: 12px;
 font-style: normal;
 font-weight: 400;
@@ -118,7 +110,7 @@ position: relative; left: 10px;
     border-radius: 5px;
 border: 1px solid var(--Primary, var(--primary-color));
 background-color: white;
-color: var(--primary-color);
+color: #666666;
 height: 40px;
 padding: 10px 20px;
 font-weight: normal;
@@ -172,9 +164,14 @@ font-size:small;
   }
 
   button{
-    margin-top: 45px; height: 55px; border-radius: 8px; 
+    margin-top: 45px; 
+    border-radius: 8px; 
     background-color: var(--primary-color);
-     color: #fff; width: 100%; font-weight: bold; font-size: 18px;
+    padding: 12px 10px;
+     color: #666666; 
+     width: 100%; 
+     font-weight: 600; 
+     font-size: 14px;
   }
 
   .v1{

@@ -3,14 +3,14 @@
     <div class="show-more">
       <div class="more-desc">
         <h3>8 Items</h3>
-        <div class="flex">
-          <button class="tab btn" id="open-filter"><ion-icon src="/assets/imgs/Filter Sort.svg"></ion-icon></button>
-          <button class="tab btn" (click)="filterTab($event)">All</button>
-          <button class="tab btn" (click)="filterTab($event)">Newest</button>
-          <button class="tab btn" (click)="filterTab($event)">Popular</button>
-          <button class="tab btn" (click)="filterTab($event)">Relevance</button>
-          <button class="tab btn" (click)="filterTab($event)"><p>Price: Low to high</p></button>
-          <button class="tab btn" (click)="filterTab($event)"><p>Price: High to Low</p></button>
+        <div class="filterTab">
+          <button class="btn" id="open-filter"><ion-icon src="/assets/imgs/Filter Sort.svg"></ion-icon></button>
+          <button class="btn" (click)="filterTab($event)">All</button>
+          <button class="btn" (click)="filterTab($event)">Newest</button>
+          <button class="btn" (click)="filterTab($event)">Popular</button>
+          <button class="btn" (click)="filterTab($event)">Relevance</button>
+          <button class="btn" (click)="filterTab($event)"><p>Price: Low to high</p></button>
+          <button class="btn" (click)="filterTab($event)"><p>Price: High to Low</p></button>
         </div>
         <div class="items">
           @for (order of order_again; track order.id) {
