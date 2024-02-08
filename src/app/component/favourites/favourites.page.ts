@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { MenuComponent } from "../menu/menu.component";
-import { TabsPage } from "../../tabs/tabs.page";
 
 @Component({
     selector: 'app-favourites',
     templateUrl: './favourites.page.html',
     styleUrls: ['./favourites.page.scss'],
     standalone: true,
-    imports: [IonicModule, CommonModule, FormsModule, MenuComponent, TabsPage]
+    imports: [IonicModule, CommonModule, FormsModule, MenuComponent]
 })
 export class FavouritesPage implements OnInit {
 

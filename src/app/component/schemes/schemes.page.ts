@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, IonModal } from '@ionic/angular';
 import { MenuComponent } from "../menu/menu.component";
-import { TabsPage } from "../../tabs/tabs.page";
 
 @Component({
     selector: 'app-schemes',
     templateUrl: './schemes.page.html',
     styleUrls: ['./schemes.page.scss'],
     standalone: true,
-    imports: [IonicModule, CommonModule, FormsModule, MenuComponent, TabsPage]
+    imports: [IonicModule, CommonModule, FormsModule, MenuComponent]
 })
 export class SchemesPage implements OnInit {
+
+  @ViewChild(IonModal) modal?: IonModal;
 
   schemes = [
     {
@@ -39,6 +40,13 @@ export class SchemesPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(){
+  }
+
+  openModal(){
+    this.modal?.present()
   }
 
   reset(event: any){

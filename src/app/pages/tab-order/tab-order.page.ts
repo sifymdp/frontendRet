@@ -5,13 +5,13 @@ import { IonicModule } from '@ionic/angular';
 import { OrdersPage } from "../../component/orders/orders.page";
 
 @Component({
-    selector: 'app-tab-orders',
-    templateUrl: './tab-orders.page.html',
-    styleUrls: ['./tab-orders.page.scss'],
+    selector: 'app-tab-order',
+    templateUrl: './tab-order.page.html',
+    styleUrls: ['./tab-order.page.scss'],
     standalone: true,
     imports: [IonicModule, CommonModule, FormsModule, OrdersPage]
 })
-export class TabOrdersPage implements OnInit {
+export class TabOrderPage implements OnInit {
 
   constructor() { }
 

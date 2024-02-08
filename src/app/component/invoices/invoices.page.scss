@@ -1,7 +1,6 @@
 ion-content{
     background-color: #FDFDFD;
     --ion-background-color: #FDFDFD;
-    --padding-bottom: 100px;
     --padding-start: 15px;
     --padding-end: 15px;
 }
@@ -120,6 +119,9 @@ a{
         font-weight: 400;
         color: #919191;
     }
+}
+.chart{
+    margin: 30px 10px 20px 10px;
 }
 .recent-orders{
     padding-bottom: 20px;
