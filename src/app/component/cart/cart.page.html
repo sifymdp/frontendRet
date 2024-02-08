@@ -114,6 +114,19 @@
     </div>
   </div>
   <div class="place-order">
-    <div class="btn3">Place Order</div>
+    <div class="btn3" id="open-modal" expand="block">Place Order</div>
   </div>
 </ion-content>
+
+<ion-modal #modal trigger="open-modal" class="model">
+  <ng-template>
+    <div class="close" (click)="modal.dismiss()"><img src="/assets/imgs/Close.svg"></div>
+    <div class="content">
+      <img src="/assets/imgs/ep_success-filled.svg">
+      <h2>Order Placed Successfully</h2>
+      <p>Order ID: 571524399</p>
+      <div class="btn primary">Continue Shopping</div>
+      <div class="btn secondary">View Order</div>
+    </div>
+  </ng-template>
+</ion-modal>

@@ -226,14 +226,27 @@
     --ion-card-background: #FFFFFF;
     --box-shadow: none;
     box-shadow: none;
-    // Style1
-    --ion-color-primary: #FD9018;
-    --ion-toolbar-background: #FFE1AF;
-    --primary-color: #FD9018;
+
+    /* Style1 - Orange */
+    // --ion-color-primary: #FD9018;
+    // --ion-toolbar-background: #FFE1AF;
+    // --primary-color: #FD9018;
+    // --secondary-color: #FFFEF5;
+    // --tertiary-color: #92DD48;
+    // --bg-color: #FFE1AF;
+    // --offers-color: #FFE9D0;
+    // --gradient-color: linear-gradient(180deg, #FFE1AF 0%, #FFDEA7 37.76%, #FFFEF5 100%);
+
+
+    /* Style2 - Golden Yellow */
+    --ion-color-primary: #FFD53E;
+    --ion-toolbar-background: #FEF2C8;
+    --primary-color: #FFD53E;
     --secondary-color: #FFFEF5;
-    --tertiary-color: #92DD48;
-    --bg-color: #FFE1AF;
-    --offers-color: #FFE9D0;
+    --tertiary-color: #446DFF;
+    --bg-color: #FEF2C8;
+    --offers-color: #FFF0BA;
+    --gradient-color: linear-gradient(180deg, #FEF2C8 0%, #FEF2C8 38%, rgba(254, 242, 200, 0) 100%);
   }
 }
 

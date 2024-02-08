@@ -13,8 +13,8 @@ ion-tab-bar {
     }
 }
 .tab-selected {
-    color: rgba(253, 144, 24, 1);
+    color: var(--primary-color);
+    ion-label{
+        color: #1D1D1D;
+    }
 }
-// ion-tab-bar{
-//     --ion-tab-bar-background: #FFFFFF;
-// }
