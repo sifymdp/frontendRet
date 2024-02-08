@@ -1,1 +1,24 @@
-<ion-content></ion-content>
+<ion-content>
+  <div class="notifications">
+    <h2>Unread (2)</h2>
+      @for (item of unread; track item.id) {
+        <div class="card one">
+          <div class="flex">
+            <h3>{{item.title}}</h3>
+            <h4>{{item.duration}}</h4>
+          </div>
+          <p>{{item.description}}</p>
+        </div>
+      }
+    <h2>Previous notifications (2)</h2>
+    @for (item of previous; track item.id) {
+      <div class="card two">
+        <div class="flex">
+          <h3>{{item.title}}</h3>
+          <h4>{{item.duration}}</h4>
+        </div>
+        <p>{{item.description}}</p>
+      </div>
+    }
+  </div>
+</ion-content>

@@ -1,6 +1,8 @@
 <ion-content [fullscreen]="true">
   <div class="barcode">
     <h2>Scan the barcode of the product</h2>
-    <div></div>
+    <div>
+      <ngx-barcode-scanner [(value)]="value" [codes]="['code_128', 'ean', 'upc', 'upc_e', 'ean_8']" [errorThreshold]="0.1" (exception)="onError($event)"></ngx-barcode-scanner>
+    </div>
   </div>
 </ion-content>

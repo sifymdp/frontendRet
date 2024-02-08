@@ -13,6 +13,34 @@ import { MenuComponent } from "../menu/menu.component";
 })
 export class NotificationsPage implements OnInit {
 
+  unread: any[] = [
+    {
+      id: '1',
+      title: 'Fortune',
+      description: 'Good news! Enjoy a 50% discount on your favorite items, Fortune edible oil and lot more.',
+      duration: 'Just now',
+    },
+    {
+      id: '2',
+      title: 'Fortune',
+      description: 'Good news! Enjoy a 50% discount on your favorite items, Fortune edible oil and lot more.',
+      duration: '30 mins ago',
+    },
+  ]
+  previous: any[] = [
+    {
+      id: '1',
+      title: 'Fortune',
+      description: 'Good news! Enjoy a 50% discount on your favorite items, Fortune edible oil and lot more.',
+      duration: 'Just now',
+    },
+    {
+      id: '2',
+      title: 'Fortune',
+      description: 'Good news! Enjoy a 50% discount on your favorite items, Fortune edible oil and lot more.',
+      duration: '30 mins ago',
+    },
+  ]
   constructor() { }
 
   ngOnInit() {

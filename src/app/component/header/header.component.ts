@@ -84,7 +84,7 @@ export class HeaderComponent  implements OnInit {
             this.headerText = 'Top Deals'
             break
           case 'barcode':
-            this.headerText = 'AJ Mart'
+            this.headerText = 'Aj Mart'
             break
         }
       }
