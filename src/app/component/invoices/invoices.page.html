@@ -25,10 +25,9 @@
     </div>
   </div>
   <div class="listview" *ngIf="view_state == 'listview'">
-    <h2>Orders</h2>
+    <h2>Invoices</h2>
     <div class="filterTab">
-      <button class="btn" (click)="filterTab($event)"><p>All Orders</p></button>
-      <button class="btn" (click)="filterTab($event)">Placed</button>
+      <button class="btn" (click)="filterTab($event)"><p>All Invoices</p></button>
       <button class="btn" (click)="filterTab($event)">Invoiced</button>
       <button class="btn" (click)="filterTab($event)"><p>In Transit</p></button>
       <button class="btn" (click)="filterTab($event)">Delivered</button>
@@ -56,7 +55,7 @@
                 <h5>{{rcorder.items_number}} Items</h5>
               </ion-col>
               <ion-col>
-                <div class="btn">View Details <img src="/assets/imgs/nav-arrow-right.svg"></div>
+                <div class="btn"><a href="/invoice-details">View Details <img src="/assets/imgs/nav-arrow-right.svg"></a></div>
               </ion-col>
             </ion-row>
           </ion-grid>

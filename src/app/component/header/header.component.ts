@@ -38,6 +38,9 @@ export class HeaderComponent  implements OnInit {
           case 'orders':
             this.headerText = 'My Orders'
             break
+          case 'order-details':
+            this.headerText = 'My Orders'
+            break
           case 'schemes':
             this.headerText = 'Schemas'
             break
@@ -54,7 +57,7 @@ export class HeaderComponent  implements OnInit {
             this.headerText = 'My Invoices'
             break
           case 'invoice-details':
-            this.headerText = 'Invoice Details'
+            this.headerText = 'My Invoices'
             break
           case 'scheme-products':
             this.headerText = 'Scheme Products'

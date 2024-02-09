@@ -99,7 +99,7 @@ a{
     ion-card{
         border-radius: 12px;
         box-shadow: 0px 4px 25px 0px #0000000D;
-        padding: 10px;
+        padding: 15px 15px 10px 15px;
         margin-bottom: 20px;
     }
     .status{
@@ -146,10 +146,15 @@ a{
     .btn{
         font-size: 12px;
         font-weight: 400;
-        color: #919191;
         text-align: right;
-        cursor: pointer;
-        text-decoration: underline;
+        a{
+            color: #919191;
+            cursor: pointer;
+            text-decoration: underline;
+            &:hover{
+                color: #919191;
+            }
+        }
         img{
             width: 18px;
             margin-bottom: -5px;
@@ -248,9 +253,9 @@ a{
     }
     .btn2{
         font-size: 14px;
-        font-weight: 700;
+        font-weight: 400;
         background-color: var(--primary-color);
-        color: #666666;
+        color: #353535;
         text-align: center;
         padding: 10px 10px;
         border-radius: 6px;
