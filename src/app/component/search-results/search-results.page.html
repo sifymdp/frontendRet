@@ -2,32 +2,33 @@
   <div class="categories">
     <div class="show-more">
       <div class="more-desc">
-        <h3>8 Items</h3>
+        <h3>Akki Rice</h3>
+        <p>12 products found</p>
         <div class="items">
-          @for (order of order_again; track order.id) {
+          @for (result of search_results; track result.id) {
             <ion-card>
               <ion-grid>
                 <ion-row>
                   <ion-col size="auto">
                     <div class="image-col">
                       <div class="text-right">
-                        <button ion-button icon-left clear  (click)="toggleLiked(order)">
-                          <ion-img [src]="order.icon"></ion-img>
+                        <button ion-button icon-left clear  (click)="toggleLiked(result)">
+                          <ion-img [src]="result.icon"></ion-img>
                         </button>
                       </div>
                       <div class="image">
-                        <ion-img [src]="order.img.src" [alt]="order.img.alt"></ion-img>
+                        <ion-img [src]="result.img.src" [alt]="result.img.alt"></ion-img>
                       </div>
                     </div>
                   </ion-col>
                   <ion-col>
-                    <h1>{{order.brand_name}}</h1>
-                    <h2>{{order.product_name}}</h2>
-                    <h3>{{order.unit_cross_quantity}}</h3>
-                    <h4>UOM: {{order.uom}}</h4>
-                    <h4>Qty: {{order.qty}}</h4>
-                    <h2>{{order.rate}}</h2>
-                    <div class="btn">Add</div>
+                    <h1>{{result.brand_name}}</h1>
+                    <h2>{{result.product_name}}</h2>
+                    <h3>{{result.unit_cross_quantity}}</h3>
+                    <h4>UOM: {{result.uom}}</h4>
+                    <h4>Qty: {{result.qty}}</h4>
+                    <h2>{{result.rate}}</h2>
+                    <div class="btn">View</div>
                   </ion-col>
                 </ion-row>
               </ion-grid>

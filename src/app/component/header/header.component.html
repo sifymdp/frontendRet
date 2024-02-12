@@ -10,6 +10,14 @@
     <ion-title class="title">
       {{headerText}}
     </ion-title>
+    <ion-buttons slot="end" class="head-icon" *ngIf="headerText != 'AJ Mart'">
+      <div class="search-container">
+        <form action="/search" method="get">
+          <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search">
+          <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+        </form>
+      </div>
+    </ion-buttons>
     <ion-buttons slot="end" class="head-icon">
         <a href="/notifications">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

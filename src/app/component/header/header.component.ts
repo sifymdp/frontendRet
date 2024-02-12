@@ -89,6 +89,9 @@ export class HeaderComponent  implements OnInit {
           case 'barcode':
             this.headerText = 'Aj Mart'
             break
+          case 'search-results':
+            this.headerText = 'Search Results'
+            break
         }
       }
     })
