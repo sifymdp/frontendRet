@@ -1,7 +1,7 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonModal } from '@ionic/angular/standalone';
 import { MenuComponent } from "../menu/menu.component";
 import { IonicSlides } from '@ionic/angular';
 
@@ -10,10 +10,12 @@ import { IonicSlides } from '@ionic/angular';
     templateUrl: './categories.page.html',
     styleUrls: ['./categories.page.scss'],
     standalone: true,
-    imports: [IonicModule, CommonModule, FormsModule, MenuComponent],
+    imports: [ CommonModule, FormsModule, MenuComponent, IonModal],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CategoriesPage implements OnInit {
+
+  @ViewChild(IonModal) modal?: IonModal;
 
   swiperModules = [IonicSlides];
   showMore:boolean = false;
@@ -129,6 +131,39 @@ export class CategoriesPage implements OnInit {
       qty: '40'
     },
   ]
+  price_details = [
+    {
+      id: '1',
+      price: '200.00',
+      qty: '1 - 99'
+    },
+    {
+      id: '2',
+      price: '150.00',
+      qty: '100 - 499'
+    },
+    {
+      id: '3',
+      price: '126.00',
+      qty: '500 +'
+    }
+  ]
+  order_details = 
+    {
+      id: 1,
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      },
+      icon: '/assets/imgs/star-unliked.svg',
+      brand_name: 'Fortune',
+      product_name: 'Refined Sunflower Oil',
+      unit_cross_quantity: '20 ut x 500 ml',
+      rate: '₹ 126.00',
+      offer: '45% Off!',
+      uom: 'Each',
+      qty: '40'
+    }
 
   constructor() { }
 
@@ -141,6 +176,20 @@ export class CategoriesPage implements OnInit {
 
   reset(event: any){
   }
+
+  openModal(){
+    this.modal?.present()
+  }
+
+  add(){
+    // model.dismiss();
+    let msg = document.getElementById("success-message")!;
+    msg.style.display = "block";
+  }
+
+  decrease(){}
+  
+  increase(){}
 
   filterTab(event: any){
   }

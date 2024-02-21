@@ -28,7 +28,7 @@
                     <h4>UOM: {{result.uom}}</h4>
                     <h4>Qty: {{result.qty}}</h4>
                     <h2>{{result.rate}}</h2>
-                    <div class="btn">View</div>
+                    <div class="btn" (click)="openModal()">View</div>
                   </ion-col>
                 </ion-row>
               </ion-grid>
@@ -39,3 +39,113 @@
     </div>
   </div>
 </ion-content>
+
+<!-- View cart -->
+<ion-modal #model cssClass="inline_modal" (ionModalDidDismiss)="reset($event)" [breakpoints]="[0.1, 0.5, 0.9]" [initialBreakpoint]="0.7">
+  <ng-template>
+    <!-- <app-add-to-cart-bottom-sheet></app-add-to-cart-bottom-sheet> -->
+    <div class="ion-no-border">
+      <ion-grid class="main-card">
+        <ion-row>
+          <ion-col size="auto">
+            <div class="image-col">
+              <ion-grid class="offers">
+                <ion-row>
+                  <ion-col>
+                    @if(order_details.offer){
+                      <h6>{{order_details.offer}}</h6>
+                    }
+                  </ion-col>
+                  <ion-col class="text-right">
+                    <button ion-button icon-left clear small (click)="toggleLiked(order_details)">
+                      <ion-icon [src]="order_details.icon"></ion-icon>
+                    </button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <div class="image">
+                <ion-img [src]="order_details.img.src" [alt]="order_details.img.alt"></ion-img>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="content">
+              <h1>Fortune</h1>
+              <h2>Refined Sunflower Oil</h2>
+              <h3>20 ut x 500 ml</h3>
+              <h4>₹ 126.00 ~ 200.00 <span>MRP: <span>₹ 260.00</span></span></h4>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="auto">
+                    <h1>UOM </h1>
+                  </ion-col>
+                  <ion-col size="auto">
+                    <select>
+                      <option>Each</option>
+                    </select>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="discount">
+        <h6>Get more at discounted price</h6>
+        <div class="show-more">
+          <div class="less-desc">
+            <ion-accordion-group>
+              <ion-accordion value="first">
+                <ion-item slot="header" color="light">
+                  <h2><img src="/assets/imgs/Offer.svg"> Get 35% Off on all flours</h2>
+                </ion-item>
+                <div class="ion-padding" slot="content">
+                  <h3>Description of the scheme that is very long which can span for one or two lines</h3>
+                  <p>Validity</p>
+                  <p>01/01/2024 to 30/02/2024</p>
+                  <hr>
+                  <div class="btn">View All Products</div>
+                </div>
+              </ion-accordion>
+            </ion-accordion-group>
+          </div>
+          @if (price_details.length > 0){
+            <div class="more-desc">
+              @for (price of price_details; track price.id) {
+                <div class="card">
+                  <h4>₹ {{price.price}}</h4>
+                  <h5>Qty: {{price.qty}}</h5>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="auto">
+            <ion-grid>
+              <ion-row class="count">
+                <ion-col size="auto">
+                  <div class="minus btn" (click)="decrease()">-</div>
+                </ion-col>
+                <ion-col size="auto">
+                  <p>40</p>
+                </ion-col>
+                <ion-col size="auto">
+                  <div class="plus btn" (click)="increase()">+</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+          <ion-col class="text-right">
+           <h3>Sub total</h3>
+           <h6>₹ 8000.00</h6>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="btn2" id="open-toast" expand="block" (click)="add()">Add to Cart</div>
+      <ion-toast id="success-message" trigger="open-toast" message="Product added to Cart" [duration]="3000" class="custom-toast" icon="/assets/imgs/check filled.svg"></ion-toast>
+    </div>
+  </ng-template>
+</ion-modal>
