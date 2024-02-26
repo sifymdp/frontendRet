@@ -1,4 +1,6 @@
 import { Component, Input, OnInit, ViewChild, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IonicSlides, ModalController } from '@ionic/angular';
 import { IonCard, IonList, IonItem, IonLabel, IonChip, IonButton, IonIcon, IonThumbnail, IonText, IonImg, IonGrid, IonRow, IonCol, IonAccordion, IonAccordionGroup, IonToast, IonModal } from '@ionic/angular/standalone';
 
 @Component({
@@ -6,11 +8,12 @@ import { IonCard, IonList, IonItem, IonLabel, IonChip, IonButton, IonIcon, IonTh
   templateUrl: './top-deals.component.html',
   styleUrls: ['./top-deals.component.scss'],
   standalone: true,
-  imports: [IonCard, IonList, IonItem, IonLabel, IonChip, IonButton, IonIcon, IonThumbnail, IonText, IonImg, IonGrid, IonRow, IonCol, IonAccordion, IonAccordionGroup, IonToast, IonModal],
+  imports: [IonCard, IonList, IonItem, IonLabel, IonChip, IonButton, IonIcon, IonThumbnail, IonText, IonImg, IonGrid, IonRow, IonCol, IonAccordion, IonAccordionGroup, IonToast, IonModal, CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TopDealsComponent  implements OnInit {
 
+  swiperModules = [IonicSlides];
   @ViewChild(IonModal) modal?: IonModal;
   @Input() topDeal: any
 
@@ -46,11 +49,34 @@ export class TopDealsComponent  implements OnInit {
       offer: '45% Off!',
       uom: 'Each',
       qty: '40'
-    }
+  }
+
+  product_images: any[] = [
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+  ];
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   reset(event: any){
   }

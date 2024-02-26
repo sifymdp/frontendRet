@@ -392,7 +392,8 @@ a{
                 display: block;
             }
             .more-desc{
-                display: none;
+                display: flex;
+                margin: 0 15px 30px 15px;
             }
             .btn{
                 border: 0;
@@ -403,15 +404,6 @@ a{
                 font-weight: 500;
                 color: #353535;
                 margin-bottom: 0;
-            }
-            &.active{
-                .less-desc{
-                    display: none;
-                }
-                .more-desc{
-                    display: flex;
-                    margin: 0 15px 30px 15px;
-                }
             }
         }
         .card{

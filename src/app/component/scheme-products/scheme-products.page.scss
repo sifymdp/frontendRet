@@ -214,7 +214,6 @@ a{
     justify-content: space-between;
     align-items: center;
     .btn{
-        border: 1px solid var(--primary-color);
         border-radius: 6px;
         font-size: 14px;
         font-weight: 700;
@@ -225,9 +224,11 @@ a{
         width: 45%;
     }
     .primary{
+        border: 1px solid var(--primary-color);
         background-color: var(--primary-color);
     }
     .secondary{
+        border: 1px solid #666666;
         background-color: #FFFFFF;
     }
 }
@@ -455,7 +456,8 @@ a{
                 display: block;
             }
             .more-desc{
-                display: none;
+                display: flex;
+                margin: 0 15px 30px 15px;
             }
             .btn{
                 border: 0;
@@ -466,15 +468,6 @@ a{
                 font-weight: 500;
                 color: #353535;
                 margin-bottom: 0;
-            }
-            &.active{
-                .less-desc{
-                    display: none;
-                }
-                .more-desc{
-                    display: flex;
-                    margin: 0 15px 30px 15px;
-                }
             }
         }
         .card{

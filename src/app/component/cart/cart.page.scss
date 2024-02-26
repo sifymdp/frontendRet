@@ -296,7 +296,6 @@ a{
         margin-bottom: 20px;
     }
     .btn{
-        border: 1px solid var(--primary-color);
         border-radius: 6px;
         font-size: 14px;
         font-weight: 700;
@@ -306,9 +305,11 @@ a{
         margin-bottom: 20px;
     }
     .primary{
+        border: 1px solid var(--primary-color);
         background-color: var(--primary-color);
     }
     .secondary{
+        border: 1px solid #666666;
         background-color: #FFFFFF;
     }
 }
