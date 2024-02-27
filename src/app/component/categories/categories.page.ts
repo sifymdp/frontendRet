@@ -163,7 +163,27 @@ export class CategoriesPage implements OnInit {
       offer: '45% Off!',
       uom: 'Each',
       qty: '40'
-    }
+  }
+  product_images: any[] = [
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+  ];
 
   constructor() { }
 

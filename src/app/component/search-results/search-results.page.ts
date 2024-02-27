@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, CUSTOM_ELEMENTS_SCHEMA } from '@angular/c
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonModal } from '@ionic/angular/standalone';
+import { IonicSlides, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-search-results',
@@ -13,6 +14,7 @@ import { IonModal } from '@ionic/angular/standalone';
 })
 export class SearchResultsPage implements OnInit {
 
+  swiperModules = [IonicSlides];
   @ViewChild(IonModal) modal?: IonModal;
 
   search_results = [
@@ -109,7 +111,27 @@ export class SearchResultsPage implements OnInit {
       offer: '45% Off!',
       uom: 'Each',
       qty: '40'
-    }
+  }
+  product_images: any[] = [
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+  ];
 
   constructor() { }
 

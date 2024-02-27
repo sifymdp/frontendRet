@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonModal } from '@ionic/angular/standalone';
 import { MenuComponent } from "../menu/menu.component";
+import { IonicSlides, ModalController } from '@ionic/angular';
 
 @Component({
     selector: 'app-favourites',
@@ -14,6 +15,7 @@ import { MenuComponent } from "../menu/menu.component";
 })
 export class FavouritesPage implements OnInit {
 
+  swiperModules = [IonicSlides];
   @ViewChild(IonModal) modal?: IonModal;
 
   order_again = [
@@ -110,7 +112,27 @@ export class FavouritesPage implements OnInit {
       offer: '45% Off!',
       uom: 'Each',
       qty: '40'
-    }
+  }
+  product_images: any[] = [
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+    {
+      img: {
+        src: 'assets/imgs/product.png',
+        alt: 'product'
+      }
+    },
+  ];
 
   constructor() { }
 
