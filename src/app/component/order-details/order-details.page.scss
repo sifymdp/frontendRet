@@ -50,8 +50,8 @@ a{
         border: 2px solid var(--offers-color);
         background-color: #FFFFFF;
         border-radius: 6px;
-        padding: 10px;
-        margin-bottom: 30px;
+        padding: 15px 10px;
+        margin-bottom: 20px;
         .flex{
             align-items: center;
             justify-content: space-between;
@@ -88,13 +88,31 @@ a{
             text-align: center;
         }
     }
+    .accordion{
+        box-shadow: 0px 4px 50px 0px #0000000A;
+        border: 2px solid var(--offers-color);
+        background-color: #FFFFFF;
+        border-radius: 6px;
+        padding: 0px 10px;
+    }
+    .content{
+        padding: 10px 0 15px 0;
+    }
+    .ion-color-light {
+        --ion-color-base: #FDFDFD !important;
+        --ion-color-contrast: #494949 !important;
+        --ion-color-light-contrast: #494949;
+        --ion-color-shade: #FDFDFD !important;
+        align-items: baseline;
+        --padding-start: 0;
+        --inner-padding-end: 0;
+    }
     .tracking{
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         h3{
             font-size: 14px;
             font-weight: 700;
             color: #494949;
-            margin-bottom: 20px;
         }
         h4{
             font-size: 14px;
@@ -262,18 +280,17 @@ a{
         }
     }
     .summary{
-        padding: 20px 0 30px 0;
+        margin-bottom: 30px;
         h3{
             font-size: 14px;
             font-weight: 700;
             color: #494949;
+            margin-bottom: 5px;
         }
-        .card{
-            border: 2px solid var(--offers-color);
-            background-color: #FFFFFF;
-            box-shadow: 0px 4px 50px 0px #0000000A;
-            border-radius: 6px;
-            padding: 20px;
+        p{
+            font-size: 12px;
+            font-weight: 400;
+            color: #494949;
         }
         h4{
             font-size: 14px;

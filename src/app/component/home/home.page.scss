@@ -70,21 +70,21 @@ a{
 }
 .categories{
     padding-bottom: 20px;
-    .swiper-item{
-        ion-card{
-            box-shadow: none;
-            text-align: center;
-            border: 1px solid #000;
-            margin-bottom: 0;
+    .card{
+        text-align: center;
+        margin: 0 2px 15px 2px;
+        cursor: pointer;
+        .image{
+            background: linear-gradient(180deg, #FAEFCD 0%, #EFEEE4 100%);
+            border-radius: 6px;
+            padding: 8px;
         }
-        ion-img{
-            padding: 10px;
-        }
-        ion-label{
-            font-size: 14px;
+        h2{
+            font-size: 12px;
             font-weight: 400;
-            color: #353535;
-            margin-top: 0;
+            color: #1D1D1D;
+            margin-bottom: 0px;
+            margin-top: 10px;
         }
     }
 }

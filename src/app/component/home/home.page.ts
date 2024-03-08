@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonMenu, IonModal, IonImg } from '@ionic/angular/standalone';
 import { IonicSlides, ModalController } from '@ionic/angular';
 import { OrderAgainComponent } from 'src/app/component/order-again/order-again.component';
@@ -15,7 +15,7 @@ import { MenuComponent } from 'src/app/component/menu/menu.component';
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonMenu, IonModal, IonImg, OrderAgainComponent, TopDealsComponent, AddToCartBottomSheetComponent, CommonModule, MenuComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HomePage {
+export class HomePage implements OnInit{
 
   swiperModules = [IonicSlides];
 
@@ -99,7 +99,35 @@ export class HomePage {
       },
       name: 'Category 6'
     }
+    ,
+    {
+      id: 7,
+      img: {
+        src: '/assets/imgs/alt-icon.png',
+        alt: 'Category'
+      },
+      name: 'Category 7'
+    }
+    ,
+    {
+      id: 8,
+      img: {
+        src: '/assets/imgs/alt-icon.png',
+        alt: 'Category'
+      },
+      name: 'Category 8'
+    }
+    ,
+    {
+      id: 9,
+      img: {
+        src: '/assets/imgs/alt-icon.png',
+        alt: 'Category'
+      },
+      name: 'Category 9'
+    }
   ]
+  first8 = this.categories.slice(0, 8);
 
   order_again = [
     {
@@ -182,9 +210,10 @@ export class HomePage {
     }
   ]
 
-  
-
   constructor() {}
+
+  ngOnInit(){
+  }
 
   speechReg(){
   }

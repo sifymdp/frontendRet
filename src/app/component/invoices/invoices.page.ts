@@ -70,7 +70,15 @@ export class InvoicesPage implements OnInit {
       options: {
         scales: {
           y: {
-            beginAtZero: true
+            ticks: {
+              color: '#1D1D1D',
+            },
+            beginAtZero: true,
+          },
+          x: {
+            ticks: {
+              color: '#1D1D1D',
+            },
           }
         },
         plugins: {

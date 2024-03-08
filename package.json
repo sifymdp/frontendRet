@@ -30,6 +30,7 @@
     "@eisberg-labs/ngx-barcode-scanner": "^6.0.0",
     "@ericblade/quagga2": "^1.8.4",
     "@ionic/angular": "^7.5.0",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "buffer": "^6.0.3",
     "chart.js": "^4.4.1",
     "ionicons": "^7.2.1",

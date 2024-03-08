@@ -33,25 +33,21 @@
                   <a href="/categories">View All</a>
                 </ion-text>
               </ion-button>
-            </ion-list-header>  
-            <div class="swiper-item">
-              <swiper-container
-                [modules]="swiperModules"
-                [slidesPerView]="3.4"
-                [keyboard]="true"
-                [centerSlides]="true">
-                @for (category of categories; track category.id) {
-                  <swiper-slide>
-                    <ion-card>
-                      <ion-img [src]="category.img.src" [alt]="category.img.alt"></ion-img>
-                    </ion-card>
-                    <ion-item>
-                      <ion-label>{{category.name}}</ion-label>
-                    </ion-item>
-                  </swiper-slide>
+            </ion-list-header>
+            <ion-grid>
+              <ion-row>
+                @for (category of first8; track category.id) {
+                  <ion-col size="3">
+                    <div class="card">
+                      <div class="image">
+                        <img [src]="category.img.src" [alt]="category.img.alt">
+                      </div>
+                      <h2>{{category.name}}</h2>
+                    </div>
+                  </ion-col>
                 }
-              </swiper-container>
-            </div>
+              </ion-row>
+            </ion-grid>
           </ion-list>
         </div>
       }

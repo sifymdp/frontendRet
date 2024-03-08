@@ -41,16 +41,29 @@ a{
 }
 .settings{
     padding-top: 20px;
+    .card{
+      box-shadow: 0px 4px 20px 0px #00000012;
+      padding: 15px 10px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
     .flex{
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     h3{
         font-size: 16px;
         font-weight: 400;
         color: #494949;
         margin-bottom: 0;
+    }
+    p{
+      font-size: 12px;
+      font-weight: 400;
+      color: #494949;
+      line-height: 16px;
+      margin-bottom: 0;
     }
     .switch {
         position: relative;
@@ -101,6 +114,14 @@ a{
       }
       .slider.round:before {
         border-radius: 50%;
+      }
+      .accordion{
+        box-shadow: 0px 4px 20px 0px #00000012;
+        padding: 3px 10px 0px 10px;
+        border-radius: 6px;
+      }
+      .content{
+        padding: 10px 0 15px 0;
       }
     .ion-color-light {
         --ion-color-base: #FDFDFD !important;

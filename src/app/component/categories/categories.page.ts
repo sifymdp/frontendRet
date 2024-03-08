@@ -4,18 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { IonModal } from '@ionic/angular/standalone';
 import { MenuComponent } from "../menu/menu.component";
 import { IonicSlides } from '@ionic/angular';
+import { NgbTooltip, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-categories',
     templateUrl: './categories.page.html',
     styleUrls: ['./categories.page.scss'],
     standalone: true,
-    imports: [ CommonModule, FormsModule, MenuComponent, IonModal],
+    imports: [ CommonModule, FormsModule, MenuComponent, IonModal, NgbTooltipModule],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CategoriesPage implements OnInit {
 
   @ViewChild(IonModal) modal?: IonModal;
+  @ViewChild('tleft') public tooltip!: NgbTooltip;
 
   swiperModules = [IonicSlides];
   showMore:boolean = false;
@@ -189,6 +191,13 @@ export class CategoriesPage implements OnInit {
 
   ngOnInit() {
   }
+
+  open(){
+    this.tooltip.open();
+  }
+  ngAfterViewInit() {
+    setTimeout(() => this.open(),2000);
+ }
 
   showMoreDesc(ev: any){
     this.showMore = !this.showMore;

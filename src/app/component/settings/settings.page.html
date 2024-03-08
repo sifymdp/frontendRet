@@ -1,19 +1,22 @@
 <ion-content>
   <div class="settings">
-    <div class="flex">
-      <h3>Enable Speech to Text</h3>
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
+    <div class="card">
+      <div class="flex">
+        <h3>Enable Speech to Text</h3>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <p>Tap the mic once on the product list and cart pages to utilize voice commands. Long-press the mic to access a list of available commands.</p>
     </div>
-    <div>
+    <div class="accordion">
       <ion-accordion-group>
         <ion-accordion value="first">
           <ion-item slot="header" color="light">
             <ion-label>Permissions</ion-label>
           </ion-item>
-          <div slot="content">Content</div>
+          <div slot="content" class="content">Content</div>
         </ion-accordion>
       </ion-accordion-group>
     </div>

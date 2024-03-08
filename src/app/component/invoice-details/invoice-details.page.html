@@ -8,117 +8,129 @@
       </div>
       <p>Jan 12, 2024</p>
     </div>
-    <div class="tracking">
-      <h3>Invoice Tracking</h3>
-      <div class="process-wrap"  *ngIf="order_tracking.invoiced == false">
-        <div class="process1">
-          <h4>Invoiced</h4>
-        </div>
-        <div class="process1">
-          <h4>In Transit</h4>
-        </div>
-        <div class="process1">
-          <h4>Delivered</h4>
-        </div>
-      </div>
-      <div class="process-wrap"  *ngIf="order_tracking.invoiced == true && order_tracking.intransit == false">
-        <div class="process2">
-          <h4>Invoiced</h4>
-          <p>{{order_tracking.invoiced_date}}</p>
-        </div>
-        <div class="process1">
-          <h4>In Transit</h4>
-        </div>
-        <div class="process1">
-          <h4>Delivered</h4>
-        </div>
-      </div>
-      <div class="process-wrap"  *ngIf="order_tracking.intransit == true && order_tracking.delivered == false">
-        <div class="process2">
-          <h4>Invoiced</h4>
-          <p>{{order_tracking.invoiced_date}}</p>
-        </div>
-        <div class="process2">
-          <h4>In Transit</h4>
-          <p>{{order_tracking.transit_date}}</p>
-        </div>
-        <div class="process1">
-          <h4>Delivered</h4>
-        </div>
-      </div>
-      <div class="process-wrap"  *ngIf="order_tracking.delivered == true">
-        <div class="process2">
-          <h4>Invoiced</h4>
-          <p>{{order_tracking.invoiced_date}}</p>
-        </div>
-        <div class="process2">
-          <h4>In Transit</h4>
-          <p>{{order_tracking.transit_date}}</p>
-        </div>
-        <div class="process2">
-          <h4>Delivered</h4>
-          <p>{{order_tracking.delivered_date}}</p>
-        </div>
-      </div>
-    </div>
-    <div class="products">
-      <h3>Products (2)</h3>
-      @for (order of orders; track order.id) {
-        <ion-card>
-          <div class="items">
-            <ion-grid class="details">
-              <ion-row>
-                <ion-col size="auto">
-                  <div class="image">
-                    <ion-img [src]="order.img.src" [alt]="order.img.alt"></ion-img>
-                  </div>
-                </ion-col>
-                <ion-col>
-                  <h1>{{order.brand_name}}</h1>
-                  <h2>{{order.product_name}}</h2>
-                  <h3>{{order.unit_cross_quantity}}</h3>
-                  <h4>Qty: <span>{{order.qty}}</span></h4>
-                  <h4>Price: <span>{{order.price}}</span></h4>
-                  <h4>Tax +: <span>{{order.tax}}</span></h4>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <hr>
-            <ion-grid class="price">
-              <ion-row>
-                <ion-col size="auto">
-                  <h3>Sub Total</h3>
-                </ion-col>
-                <ion-col class="text-right">
-                 <h6>₹ 8000.00</h6>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+    <ion-accordion-group>
+      <ion-accordion value="first" class="tracking accordion">
+        <ion-item slot="header" color="light">
+          <ion-label><h3>Invoice Tracking</h3></ion-label>
+        </ion-item>
+        <div slot="content" class="content">
+          <div class="process-wrap"  *ngIf="order_tracking.invoiced == false">
+            <div class="process1">
+              <h4>Invoiced</h4>
+            </div>
+            <div class="process1">
+              <h4>In Transit</h4>
+            </div>
+            <div class="process1">
+              <h4>Delivered</h4>
+            </div>
           </div>
-        </ion-card>
-      }
-    </div>
-    <div class="summary">
-      <h3>Payment Summary</h3>
-      <div class="card">
-        <div class="flex">
-          <h4>Total</h4>
-          <h4>₹ 15,040.00</h4>
+          <div class="process-wrap"  *ngIf="order_tracking.invoiced == true && order_tracking.intransit == false">
+            <div class="process2">
+              <h4>Invoiced</h4>
+              <p>{{order_tracking.invoiced_date}}</p>
+            </div>
+            <div class="process1">
+              <h4>In Transit</h4>
+            </div>
+            <div class="process1">
+              <h4>Delivered</h4>
+            </div>
+          </div>
+          <div class="process-wrap"  *ngIf="order_tracking.intransit == true && order_tracking.delivered == false">
+            <div class="process2">
+              <h4>Invoiced</h4>
+              <p>{{order_tracking.invoiced_date}}</p>
+            </div>
+            <div class="process2">
+              <h4>In Transit</h4>
+              <p>{{order_tracking.transit_date}}</p>
+            </div>
+            <div class="process1">
+              <h4>Delivered</h4>
+            </div>
+          </div>
+          <div class="process-wrap"  *ngIf="order_tracking.delivered == true">
+            <div class="process2">
+              <h4>Invoiced</h4>
+              <p>{{order_tracking.invoiced_date}}</p>
+            </div>
+            <div class="process2">
+              <h4>In Transit</h4>
+              <p>{{order_tracking.transit_date}}</p>
+            </div>
+            <div class="process2">
+              <h4>Delivered</h4>
+              <p>{{order_tracking.delivered_date}}</p>
+            </div>
+          </div>
         </div>
-        <div class="flex">
-          <h4>Tax</h4>
-          <h4>₹ 400.00</h4>
+      </ion-accordion>
+      <ion-accordion value="second" class="tracking accordion">
+        <ion-item slot="header" color="light">
+          <ion-label><h3>Products (2)</h3></ion-label>
+        </ion-item>
+        <div slot="content" class="content">
+          @for (order of orders; track order.id) {
+            <ion-card>
+              <div class="items">
+                <ion-grid class="details">
+                  <ion-row>
+                    <ion-col size="auto">
+                      <div class="image">
+                        <ion-img [src]="order.img.src" [alt]="order.img.alt"></ion-img>
+                      </div>
+                    </ion-col>
+                    <ion-col>
+                      <h1>{{order.brand_name}}</h1>
+                      <h2>{{order.product_name}}</h2>
+                      <h3>{{order.unit_cross_quantity}}</h3>
+                      <h4>Qty: <span>{{order.qty}}</span></h4>
+                      <h4>Price: <span>{{order.price}}</span></h4>
+                      <h4>Tax +: <span>{{order.tax}}</span></h4>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <hr>
+                <ion-grid class="price">
+                  <ion-row>
+                    <ion-col size="auto">
+                      <h3>Sub Total</h3>
+                    </ion-col>
+                    <ion-col class="text-right">
+                     <h6>₹ 8000.00</h6>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </ion-card>
+          }
         </div>
-        <div class="flex">
-          <h4>Discount</h4>
-          <h4>- ₹ 4,000.00</h4>
+      </ion-accordion>
+      <ion-accordion value="third" class="summary accordion">
+        <ion-item slot="header" color="light">
+          <ion-label><h3>Payment Summary</h3><p>Payment Method: Cash on delivery</p></ion-label>
+        </ion-item>
+        <div slot="content" class="content">
+          <div class="flex">
+            <h4>Total</h4>
+            <h4>₹ 15,040.00</h4>
+          </div>
+          <div class="flex">
+            <h4>Tax</h4>
+            <h4>₹ 400.00</h4>
+          </div>
+          <div class="flex">
+            <h4>Discount</h4>
+            <h4>- ₹ 4,000.00</h4>
+          </div>
+          <hr>
+          <div class="flex">
+            <h5>Order Total</h5>
+            <h5>₹ 11,440.00</h5>
+          </div>
         </div>
-        <hr>
-        <div class="flex">
-          <h5>Order Total</h5>
-          <h5>₹ 11,440.00</h5>
-        </div>
-      </div>
-    </div>
+      </ion-accordion>
+    </ion-accordion-group>
   </div>
 </ion-content>

@@ -4,16 +4,25 @@
       <ion-grid class="less-desc">
         <ion-row>
           @for (category of categories; track category.id) {
-            <div class="card" (click)="showMoreDesc($event)">
-              <h2>{{category.name}}</h2>
-              <img [src]="category.img.src" [alt]="category.img.alt">
-            </div>
+            <ion-col size="3">
+              <div class="card" (click)="showMoreDesc($event)">
+                <div class="image">
+                  <img [src]="category.img.src" [alt]="category.img.alt">
+                </div>
+                <h2>{{category.name}}</h2>
+              </div>
+            </ion-col>
           }
         </ion-row>
       </ion-grid>
       <div class="more-desc">
-        <h3>108 Products</h3>
-        <div class="filterTab">
+        <div class="mic" ngbTooltip="Tooltip on top" #tleft="ngbTooltip" triggers="manual"><img src="/assets/imgs/FAB.svg">
+        </div>
+        <div class="flex">
+          <h3>108 Products</h3>
+          <div id="open-filter" class="sort"><ion-icon src="/assets/imgs/Filter Sort.svg"></ion-icon></div>
+        </div>
+        <!-- <div class="filterTab">
           <button class="tab btn" id="open-filter"><ion-icon src="/assets/imgs/Filter Sort.svg"></ion-icon></button>
           <button class="tab btn" (click)="filterTab($event)">All</button>
           <button class="tab btn" (click)="filterTab($event)">Newest</button>
@@ -21,37 +30,44 @@
           <button class="tab btn" (click)="filterTab($event)">Relevance</button>
           <button class="tab btn" (click)="filterTab($event)"><p>Price: Low to high</p></button>
           <button class="tab btn" (click)="filterTab($event)"><p>Price: High to Low</p></button>
-        </div>
+        </div> -->
         <div class="items">
-          @for (order of order_again; track order.id) {
-            <ion-card>
-              <ion-grid>
-                <ion-row>
-                  <ion-col size="auto">
+          <ion-grid>
+            <ion-row>
+              @for (order of order_again; track order.id) {
+                <ion-col size="6">
+                  <ion-card>
                     <div class="image-col">
-                      <div class="text-right">
-                        <button ion-button icon-left clear  (click)="toggleLiked(order)">
-                          <ion-img [src]="order.icon"></ion-img>
-                        </button>
-                      </div>
+                      <ion-grid class="offers">
+                        <ion-row>
+                          <ion-col size="7" class="text-left">
+                            @if(order.offer){
+                              <h6>{{order.offer}}</h6>
+                            }
+                          </ion-col>
+                          <ion-col size="5" class="text-right">
+                            <button ion-button icon-left clear small (click)="toggleLiked(order)">
+                              <ion-icon [src]="order.icon"></ion-icon>
+                            </button>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
                       <div class="image">
                         <ion-img [src]="order.img.src" [alt]="order.img.alt"></ion-img>
                       </div>
                     </div>
-                  </ion-col>
-                  <ion-col>
-                    <h1>{{order.brand_name}}</h1>
-                    <h2>{{order.product_name}}</h2>
-                    <h3>{{order.unit_cross_quantity}}</h3>
-                    <h4>UOM: {{order.uom}}</h4>
-                    <h4>Qty: {{order.qty}}</h4>
-                    <h2>{{order.rate}}</h2>
-                    <div class="btn" (click)="openModal()">View</div>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-card>
-          }
+                    <div class="content">
+                      <h1>{{order.brand_name}}</h1>
+                      <h2>{{order.product_name}}</h2>
+                      <h3>{{order.unit_cross_quantity}}</h3>
+                      <h2>{{order.rate}}</h2>
+                      <div class="btn" (click)="openModal()">View</div>
+                    </div>
+                  </ion-card>
+                </ion-col>
+              }
+            </ion-row>
+          </ion-grid>
         </div>
       </div>
     </div>
@@ -69,12 +85,12 @@
             <div class="image-col">
               <ion-grid class="offers">
                 <ion-row>
-                  <ion-col>
+                  <ion-col size="7">
                     @if(order_details.offer){
                       <h6>{{order_details.offer}}</h6>
                     }
                   </ion-col>
-                  <ion-col class="text-right">
+                  <ion-col size="5" class="text-right">
                     <button ion-button icon-left clear small (click)="toggleLiked(order_details)">
                       <ion-icon [src]="order_details.icon"></ion-icon>
                     </button>
@@ -175,49 +191,66 @@
 </ion-modal>
 
 <!-- Filter -->
-<ion-modal #add_to_cart_modal trigger="open-filter" cssClass="inline_modal" (ionModalDidDismiss)="reset($event)" [breakpoints]="[0.1, 0.5, 0.7]" [initialBreakpoint]="0.7">
+<ion-modal #add_to_cart_modal trigger="open-filter">
 <ng-template>
-  <div class="model">
-    <div class="content">
-      <div class="flex">
-        <h2>Filters</h2>
-        <div class="close" (click)="add_to_cart_modal.dismiss()"><img src="/assets/imgs/Close.svg"></div>
-      </div>
-      <h3>Offers</h3>
-      <div class="offers">
-        <button class="btn">Buy 1 get 1</button>
-        <button class="btn">50% off</button>
-        <button class="btn">25% off</button>
-        <button class="btn">15% off</button>
-        <button class="btn">10% off</button>
-        <button class="btn">5% off</button>
-      </div>
-      <h3>Price</h3>
-      <div class="range-values">
-        <ion-range aria-label="Dual Knobs Range, Range with ticks" [dualKnobs]="true" [value]="{ lower: 0, upper: 50 }"></ion-range>
-        <ul>
-          <li>0</li>
-          <li>10000</li>
-          <li>20000</li>
-          <li>30000</li>
-          <li>40000</li>
-          <li>99999+</li>
-        </ul>
-      </div>
-      <h3>Brands</h3>
-      <div class="offers">
-        <button class="btn">Fortune</button>
-        <button class="btn">ITC</button>
-        <button class="btn">Amul</button>
-        <button class="btn">Saffola</button>
-        <button class="btn">Cadbury</button>
-        <button class="btn">ABC</button>
-      </div>
-    </div>
-    <div class="action flex">
-      <div class="btn secondary">Reset</div>
-      <div class="btn primary">Apply </div>
-    </div>
+  <div class="flex">
+    <h2>Filters</h2>
+    <div class="close" (click)="add_to_cart_modal.dismiss()"><img src="/assets/imgs/Close.svg"></div>
   </div>
+  <div class="tabs">
+    <div class="tab">
+        <input type="radio" id="tab-1" name="tab-group-1" checked>
+        <label for="tab-1">Tab One</label>
+        <div class="tec">
+          <div class="model">
+            <div class="content">
+              <h3>Offers</h3>
+              <div class="offers">
+                <button class="btn">Buy 1 get 1</button>
+                <button class="btn">50% off</button>
+                <button class="btn">25% off</button>
+                <button class="btn">15% off</button>
+                <button class="btn">10% off</button>
+                <button class="btn">5% off</button>
+              </div>
+              <h3>Price</h3>
+              <div class="range-values">
+                <ion-range aria-label="Dual Knobs Range, Range with ticks" [dualKnobs]="true" [value]="{ lower: 0, upper: 50 }"></ion-range>
+                <ul>
+                  <li>0</li>
+                  <li>10000</li>
+                  <li>20000</li>
+                  <li>30000</li>
+                  <li>40000</li>
+                  <li>99999+</li>
+                </ul>
+              </div>
+              <h3>Brands</h3>
+              <div class="offers">
+                <button class="btn">Fortune</button>
+                <button class="btn">ITC</button>
+                <button class="btn">Amul</button>
+                <button class="btn">Saffola</button>
+                <button class="btn">Cadbury</button>
+                <button class="btn">ABC</button>
+              </div>
+            </div>
+            <div class="action">
+              <div class="flex">
+                <div class="btn secondary">Reset</div>
+                <div class="btn primary">Apply </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+    </div>
+    <div class="tab">
+        <input type="radio" id="tab-2" name="tab-group-1">
+        <label for="tab-2">Tab Two</label>
+        <div class="tec">
+            stuff2
+        </div> 
+    </div>
+ </div>
 </ng-template>
 </ion-modal>
