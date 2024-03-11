@@ -21,7 +21,10 @@
                 </div>
               </ion-col>
               <ion-col>
-                <h1>{{order.brand_name}}</h1>
+                <div class="flex">
+                  <h1>{{order.brand_name}}</h1>
+                  <div class="delete"><img src="/assets/imgs/trash-icon.svg"></div>
+                </div>
                 <h2>{{order.product_name}}</h2>
                 <h3>{{order.unit_cross_quantity}}</h3>
                 <h4>UOM: {{order.uom}}</h4>

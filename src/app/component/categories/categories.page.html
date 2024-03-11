@@ -16,21 +16,13 @@
         </ion-row>
       </ion-grid>
       <div class="more-desc">
-        <div class="mic" ngbTooltip="Tooltip on top" #tleft="ngbTooltip" triggers="manual"><img src="/assets/imgs/FAB.svg">
-        </div>
+        <ion-img class="mic" #micButton (click)="showMenu($event)" (touchstart)="handleTouchStart($event)" (touchend)="handleTouchEnd($event)" (contextmenu)="onContextMenu($event)" src="/assets/imgs/FAB.svg"></ion-img>
+        <ion-popover #popover class="popover-position-class" mode="ios" [arrow]="isArrow" [isOpen]="isOpen" side="top" alignment="start" (didDismiss)="isOpen = false">
+        </ion-popover>
         <div class="flex">
           <h3>108 Products</h3>
           <div id="open-filter" class="sort"><ion-icon src="/assets/imgs/Filter Sort.svg"></ion-icon></div>
         </div>
-        <!-- <div class="filterTab">
-          <button class="tab btn" id="open-filter"><ion-icon src="/assets/imgs/Filter Sort.svg"></ion-icon></button>
-          <button class="tab btn" (click)="filterTab($event)">All</button>
-          <button class="tab btn" (click)="filterTab($event)">Newest</button>
-          <button class="tab btn" (click)="filterTab($event)">Popular</button>
-          <button class="tab btn" (click)="filterTab($event)">Relevance</button>
-          <button class="tab btn" (click)="filterTab($event)"><p>Price: Low to high</p></button>
-          <button class="tab btn" (click)="filterTab($event)"><p>Price: High to Low</p></button>
-        </div> -->
         <div class="items">
           <ion-grid>
             <ion-row>
@@ -184,6 +176,15 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+      <div class="add-items">
+        <ion-range aria-label="Custom range" [value]="50" [pin]="true"></ion-range>
+        <div class="availOff">
+          <h6><img src="/assets/imgs/Offer.svg"> Add 20 more items to avail 15% Off!</h6>
+        </div>
+      </div>
+      <div class="confetti">
+        <img src="/assets/imgs/ConfettiTransparent.gif" alt="this slowpoke moves">
+      </div>
       <div class="btn2" id="open-toast" expand="block" (click)="add()">Add to Cart</div>
       <ion-toast id="success-message" trigger="open-toast" message="Product added to Cart" [duration]="3000" class="custom-toast" icon="/assets/imgs/check filled.svg"></ion-toast>
     </div>
@@ -193,64 +194,110 @@
 <!-- Filter -->
 <ion-modal #add_to_cart_modal trigger="open-filter">
 <ng-template>
-  <div class="flex">
-    <h2>Filters</h2>
-    <div class="close" (click)="add_to_cart_modal.dismiss()"><img src="/assets/imgs/Close.svg"></div>
+  <div class="model">
+    <div class="tabs">
+      <div class="flex">
+        <h2>Sort & Filter</h2>
+        <div class="close" (click)="add_to_cart_modal.dismiss()"><img src="/assets/imgs/Close.svg"></div>
+      </div>
+      <div class="tab">
+          <input type="radio" id="tab-1" name="tab-group-1" checked>
+          <label for="tab-1">Filter by</label>
+          <div class="tec">
+            <div class="filter">
+              <div class="content">
+                <h3>Offers</h3>
+                <div class="offers">
+                  <button class="btn">Buy 1 get 1</button>
+                  <button class="btn">50% off</button>
+                  <button class="btn">25% off</button>
+                  <button class="btn">15% off</button>
+                  <button class="btn">10% off</button>
+                  <button class="btn">5% off</button>
+                </div>
+                <h3>Price</h3>
+                <div class="range-values">
+                  <ion-range aria-label="Dual Knobs Range, Range with ticks" [dualKnobs]="true" [value]="{ lower: 0, upper: 50 }"></ion-range>
+                  <ul>
+                    <li>0</li>
+                    <li>10000</li>
+                    <li>20000</li>
+                    <li>30000</li>
+                    <li>40000</li>
+                    <li>99999+</li>
+                  </ul>
+                  <div class="flex">
+                    <div class="range">
+                      <label>Min. Price</label>
+                      <input type="number">
+                    </div>
+                    <hr>
+                    <div class="range">
+                      <label>Max. Price</label>
+                      <input type="number">
+                    </div>
+                  </div>
+                </div>
+                <h3>Brands</h3>
+                <div class="offers">
+                  <button class="btn">Fortune</button>
+                  <button class="btn">ITC</button>
+                  <button class="btn">Amul</button>
+                  <button class="btn">Saffola</button>
+                  <button class="btn">Cadbury</button>
+                  <button class="btn">ABC</button>
+                </div>
+              </div>
+              <div class="action">
+                <div class="flex">
+                  <div class="btn secondary">Reset</div>
+                  <div class="btn primary">Apply </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+      </div>
+      <div class="tab">
+          <input type="radio" id="tab-2" name="tab-group-1">
+          <label for="tab-2">Sort by</label>
+          <div class="tec">
+            <div class="sort">
+              <div class="content">
+                <label class="container">All
+                  <input type="radio" name="radio" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">New In
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Popular
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Relevance
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Price: Low to High
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Price: High to Low
+                  <input type="radio" name="radio">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="action">
+                <div class="flex">
+                  <div class="btn secondary">Reset</div>
+                  <div class="btn primary">Apply </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+      </div>
+   </div>
   </div>
-  <div class="tabs">
-    <div class="tab">
-        <input type="radio" id="tab-1" name="tab-group-1" checked>
-        <label for="tab-1">Tab One</label>
-        <div class="tec">
-          <div class="model">
-            <div class="content">
-              <h3>Offers</h3>
-              <div class="offers">
-                <button class="btn">Buy 1 get 1</button>
-                <button class="btn">50% off</button>
-                <button class="btn">25% off</button>
-                <button class="btn">15% off</button>
-                <button class="btn">10% off</button>
-                <button class="btn">5% off</button>
-              </div>
-              <h3>Price</h3>
-              <div class="range-values">
-                <ion-range aria-label="Dual Knobs Range, Range with ticks" [dualKnobs]="true" [value]="{ lower: 0, upper: 50 }"></ion-range>
-                <ul>
-                  <li>0</li>
-                  <li>10000</li>
-                  <li>20000</li>
-                  <li>30000</li>
-                  <li>40000</li>
-                  <li>99999+</li>
-                </ul>
-              </div>
-              <h3>Brands</h3>
-              <div class="offers">
-                <button class="btn">Fortune</button>
-                <button class="btn">ITC</button>
-                <button class="btn">Amul</button>
-                <button class="btn">Saffola</button>
-                <button class="btn">Cadbury</button>
-                <button class="btn">ABC</button>
-              </div>
-            </div>
-            <div class="action">
-              <div class="flex">
-                <div class="btn secondary">Reset</div>
-                <div class="btn primary">Apply </div>
-              </div>
-            </div>
-          </div>
-        </div> 
-    </div>
-    <div class="tab">
-        <input type="radio" id="tab-2" name="tab-group-1">
-        <label for="tab-2">Tab Two</label>
-        <div class="tec">
-            stuff2
-        </div> 
-    </div>
- </div>
 </ng-template>
 </ion-modal>

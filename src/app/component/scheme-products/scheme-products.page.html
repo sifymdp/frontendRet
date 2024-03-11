@@ -2,46 +2,47 @@
   <div class="categories">
     <div class="show-more">
       <div class="more-desc">
-        <h3>8 Items</h3>
-        <div class="filterTab">
-          <button class="btn" id="open-filter"><ion-icon src="/assets/imgs/Filter Sort.svg"></ion-icon></button>
-          <button class="btn" (click)="filterTab($event)">All</button>
-          <button class="btn" (click)="filterTab($event)">Newest</button>
-          <button class="btn" (click)="filterTab($event)">Popular</button>
-          <button class="btn" (click)="filterTab($event)">Relevance</button>
-          <button class="btn" (click)="filterTab($event)"><p>Price: Low to high</p></button>
-          <button class="btn" (click)="filterTab($event)"><p>Price: High to Low</p></button>
+        <div class="flex">
+          <h3>8 Items</h3>
+          <div id="open-filter" class="sort"><ion-icon src="/assets/imgs/Filter Sort.svg"></ion-icon></div>
         </div>
         <div class="items">
-          @for (order of order_again; track order.id) {
-            <ion-card>
-              <ion-grid>
-                <ion-row>
-                  <ion-col size="auto">
+          <ion-grid>
+            <ion-row>
+              @for (order of order_again; track order.id) {
+                <ion-col size="6">
+                  <ion-card>
                     <div class="image-col">
-                      <div class="text-right">
-                        <button ion-button icon-left clear  (click)="toggleLiked(order)">
-                          <ion-img [src]="order.icon"></ion-img>
-                        </button>
-                      </div>
+                      <ion-grid class="offers">
+                        <ion-row>
+                          <ion-col size="7" class="text-left">
+                            @if(order.offer){
+                              <h6>{{order.offer}}</h6>
+                            }
+                          </ion-col>
+                          <ion-col size="5" class="text-right">
+                            <button ion-button icon-left clear small (click)="toggleLiked(order)">
+                              <ion-icon [src]="order.icon"></ion-icon>
+                            </button>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
                       <div class="image">
                         <ion-img [src]="order.img.src" [alt]="order.img.alt"></ion-img>
                       </div>
                     </div>
-                  </ion-col>
-                  <ion-col>
-                    <h1>{{order.brand_name}}</h1>
-                    <h2>{{order.product_name}}</h2>
-                    <h3>{{order.unit_cross_quantity}}</h3>
-                    <h4>UOM: {{order.uom}}</h4>
-                    <h4>Qty: {{order.qty}}</h4>
-                    <h2>{{order.rate}}</h2>
-                    <div class="btn" (click)="openModal()">View</div>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-card>
-          }
+                    <div class="content">
+                      <h1>{{order.brand_name}}</h1>
+                      <h2>{{order.product_name}}</h2>
+                      <h3>{{order.unit_cross_quantity}}</h3>
+                      <h2>{{order.rate}}</h2>
+                      <div class="btn" (click)="openModal()">View</div>
+                    </div>
+                  </ion-card>
+                </ion-col>
+              }
+            </ion-row>
+          </ion-grid>
         </div>
       </div>
     </div>
@@ -59,12 +60,12 @@
             <div class="image-col">
               <ion-grid class="offers">
                 <ion-row>
-                  <ion-col>
+                  <ion-col size="7">
                     @if(order_details.offer){
                       <h6>{{order_details.offer}}</h6>
                     }
                   </ion-col>
-                  <ion-col class="text-right">
+                  <ion-col size="5" class="text-right">
                     <button ion-button icon-left clear small (click)="toggleLiked(order_details)">
                       <ion-icon [src]="order_details.icon"></ion-icon>
                     </button>
@@ -158,6 +159,15 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+      <div class="add-items">
+        <ion-range aria-label="Custom range" [value]="50" [pin]="true"></ion-range>
+        <div class="availOff">
+          <h6><img src="/assets/imgs/Offer.svg"> Add 20 more items to avail 15% Off!</h6>
+        </div>
+      </div>
+      <div class="confetti">
+        <img src="/assets/imgs/ConfettiTransparent.gif" alt="this slowpoke moves">
+      </div>
       <div class="btn2" id="open-toast" expand="block" (click)="add()">Add to Cart</div>
       <ion-toast id="success-message" trigger="open-toast" message="Product added to Cart" [duration]="3000" class="custom-toast" icon="/assets/imgs/check filled.svg"></ion-toast>
     </div>
@@ -165,49 +175,112 @@
 </ion-modal>
 
 <!-- Filter -->
-<ion-modal #add_to_cart_modal trigger="open-filter" cssClass="inline_modal" (ionModalDidDismiss)="reset($event)" [breakpoints]="[0.1, 0.5, 0.7]" [initialBreakpoint]="0.7">
-<ng-template>
-  <div class="model">
-    <div class="content">
-      <div class="flex">
-        <h2>Filters</h2>
-        <div class="close" (click)="add_to_cart_modal.dismiss()"><img src="/assets/imgs/Close.svg"></div>
-      </div>
-      <h3>Offers</h3>
-      <div class="offers">
-        <button class="btn">Buy 1 get 1</button>
-        <button class="btn">50% off</button>
-        <button class="btn">25% off</button>
-        <button class="btn">15% off</button>
-        <button class="btn">10% off</button>
-        <button class="btn">5% off</button>
-      </div>
-      <h3>Price</h3>
-      <div class="range-values">
-        <ion-range aria-label="Dual Knobs Range, Range with ticks" [dualKnobs]="true" [value]="{ lower: 0, upper: 50 }"></ion-range>
-        <ul>
-          <li>0</li>
-          <li>10000</li>
-          <li>20000</li>
-          <li>30000</li>
-          <li>40000</li>
-          <li>99999+</li>
-        </ul>
-      </div>
-      <h3>Brands</h3>
-      <div class="offers">
-        <button class="btn">Fortune</button>
-        <button class="btn">ITC</button>
-        <button class="btn">Amul</button>
-        <button class="btn">Saffola</button>
-        <button class="btn">Cadbury</button>
-        <button class="btn">ABC</button>
-      </div>
+<ion-modal #add_to_cart_modal trigger="open-filter">
+  <ng-template>
+    <div class="model">
+      <div class="tabs">
+        <div class="flex">
+          <h2>Sort & Filter</h2>
+          <div class="close" (click)="add_to_cart_modal.dismiss()"><img src="/assets/imgs/Close.svg"></div>
+        </div>
+        <div class="tab">
+            <input type="radio" id="tab-1" name="tab-group-1" checked>
+            <label for="tab-1">Filter by</label>
+            <div class="tec">
+              <div class="filter">
+                <div class="content">
+                  <h3>Offers</h3>
+                  <div class="offers">
+                    <button class="btn">Buy 1 get 1</button>
+                    <button class="btn">50% off</button>
+                    <button class="btn">25% off</button>
+                    <button class="btn">15% off</button>
+                    <button class="btn">10% off</button>
+                    <button class="btn">5% off</button>
+                  </div>
+                  <h3>Price</h3>
+                  <div class="range-values">
+                    <ion-range aria-label="Dual Knobs Range, Range with ticks" [dualKnobs]="true" [value]="{ lower: 0, upper: 50 }"></ion-range>
+                    <ul>
+                      <li>0</li>
+                      <li>10000</li>
+                      <li>20000</li>
+                      <li>30000</li>
+                      <li>40000</li>
+                      <li>99999+</li>
+                    </ul>
+                    <div class="flex">
+                      <div class="range">
+                        <label>Min. Price</label>
+                        <input type="number">
+                      </div>
+                      <hr>
+                      <div class="range">
+                        <label>Max. Price</label>
+                        <input type="number">
+                      </div>
+                    </div>
+                  </div>
+                  <h3>Brands</h3>
+                  <div class="offers">
+                    <button class="btn">Fortune</button>
+                    <button class="btn">ITC</button>
+                    <button class="btn">Amul</button>
+                    <button class="btn">Saffola</button>
+                    <button class="btn">Cadbury</button>
+                    <button class="btn">ABC</button>
+                  </div>
+                </div>
+                <div class="action">
+                  <div class="flex">
+                    <div class="btn secondary">Reset</div>
+                    <div class="btn primary">Apply </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+        </div>
+        <div class="tab">
+            <input type="radio" id="tab-2" name="tab-group-1">
+            <label for="tab-2">Sort by</label>
+            <div class="tec">
+              <div class="sort">
+                <div class="content">
+                  <label class="container">All
+                    <input type="radio" name="radio" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">New In
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Popular
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Relevance
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Price: Low to High
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">Price: High to Low
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="action">
+                  <div class="flex">
+                    <div class="btn secondary">Reset</div>
+                    <div class="btn primary">Apply </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+        </div>
+     </div>
     </div>
-    <div class="action flex">
-      <div class="btn secondary">Reset</div>
-      <div class="btn primary">Apply </div>
-    </div>
-  </div>
-</ng-template>
+  </ng-template>
 </ion-modal>

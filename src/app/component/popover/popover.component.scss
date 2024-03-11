@@ -1,0 +1,29 @@
+ion-content {
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    --padding-start: 15px;
+    --padding-end: 15px;
+}
+.popover{
+    h2{
+        font-size: 14px;
+        font-weight: 700;
+        color: #1D1D1D;
+    }
+    p{
+        font-size: 12px;
+        font-weight: 400;
+        color: #464646;
+    }
+    a{
+        font-size: 12px;
+        font-weight: 500;
+        color: #464646;
+        cursor: pointer;
+        text-decoration: underline;
+        &:hover{
+            color: #464646;
+            text-decoration: underline;
+        }
+    }
+}

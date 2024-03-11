@@ -1,0 +1,37 @@
+ion-content {
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    --padding-start: 15px;
+    --padding-end: 15px;
+}
+.commands{
+    .flex{
+        justify-content: space-between;
+        align-items: center;
+    }
+    h2{
+        font-size: 16px;
+        font-weight: 700;
+        color: #1D1D1D;
+        margin-bottom: 0;
+    }
+    ul{
+        margin: 20px 0;
+    }
+    li{
+        font-size: 14px;
+        font-weight: 400;
+        color: #353535;
+        margin-bottom: 10px;
+    }
+    .btn{
+        font-size: 14px;
+        font-weight: 700;
+        color: #353535;
+        border: 1px solid #666666;
+        border-radius: 6px;
+        padding: 8px;
+        text-align: center;
+        cursor: pointer;
+    }
+}

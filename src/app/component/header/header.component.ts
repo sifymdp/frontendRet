@@ -59,6 +59,12 @@ export class HeaderComponent  implements OnInit {
           case 'invoice-details':
             this.headerText = 'My Invoices'
             break
+          case 'invoice-scanner':
+              this.headerText = 'Invoice Scanner'
+              break
+          case 'invoice-barcode':
+              this.headerText = 'Invoice Barcode'
+              break
           case 'scheme-products':
             this.headerText = 'Scheme Products'
             break

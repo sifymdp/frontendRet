@@ -3,12 +3,12 @@
     <div class="image-col">
       <ion-grid class="offers">
         <ion-row>
-          <ion-col class="text-left">
+          <ion-col size="7" class="text-left">
             @if(topDeal.offer){
               <h6>{{topDeal.offer}}</h6>
             }
           </ion-col>
-          <ion-col class="text-right">
+          <ion-col size="5" class="text-right">
             <button ion-button icon-left clear small (click)="toggleLiked(topDeal)">
               <ion-icon [src]="topDeal.icon"></ion-icon>
             </button>
@@ -37,7 +37,7 @@
   </ion-card>
 }
 
-<ion-modal #model cssClass="inline_modal" (ionModalDidDismiss)="reset($event)" [breakpoints]="[0.1, 0.5, 0.9]" [initialBreakpoint]="0.6">
+<ion-modal #model cssClass="inline_modal" (ionModalDidDismiss)="reset($event)" [breakpoints]="[0.1, 0.5, 0.9]" [initialBreakpoint]="0.7">
   <ng-template>
     <!-- <app-add-to-cart-bottom-sheet></app-add-to-cart-bottom-sheet> -->
     <div class="ion-no-border">
@@ -47,12 +47,12 @@
             <div class="image-col">
               <ion-grid class="offers">
                 <ion-row>
-                  <ion-col>
+                  <ion-col size="7">
                     @if(order_details.offer){
                       <h6>{{order_details.offer}}</h6>
                     }
                   </ion-col>
-                  <ion-col class="text-right">
+                  <ion-col size="5" class="text-right">
                     <button ion-button icon-left clear small (click)="toggleLiked(order_details)">
                       <ion-icon [src]="order_details.icon"></ion-icon>
                     </button>
@@ -146,6 +146,15 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+      <div class="add-items">
+        <ion-range aria-label="Custom range" [value]="50" [pin]="true"></ion-range>
+        <div class="availOff">
+          <h6><img src="/assets/imgs/Offer.svg"> Add 20 more items to avail 15% Off!</h6>
+        </div>
+      </div>
+      <div class="confetti">
+        <img src="/assets/imgs/ConfettiTransparent.gif" alt="this slowpoke moves">
+      </div>
       <div class="btn2" id="open-toast" expand="block" (click)="add()">Add to Cart</div>
       <ion-toast id="success-message" trigger="open-toast" message="Product added to Cart" [duration]="3000" class="custom-toast" icon="/assets/imgs/check filled.svg"></ion-toast>
     </div>

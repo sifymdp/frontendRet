@@ -1,0 +1,107 @@
+ion-content{
+    background-color: #FDFDFD;
+    --ion-background-color: #FDFDFD;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --padding-top: 20px;
+    --padding-bottom: 40px
+}
+.header-md {
+    box-shadow: none;
+}
+.head-icon{
+    padding-right: 15px;
+}
+ion-title{
+    color: #353535;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 5px;
+}
+.sc-ion-searchbar-md-h {
+    --border-radius: 22px;
+    --box-shadow: none;
+}
+ion-label{
+    font-size: 16px;
+    font-weight: 700;
+    color: #353535;
+}
+ion-text{
+    font-size: 12px;
+    font-weight: 400;
+    color: #353535;
+}
+a{
+    color: #353535;
+    text-decoration: none;
+    &:hover{
+        color: #353535;
+        text-decoration: none;
+    }
+}
+.invoice-scanner{
+    label{
+        font-size: 14px;
+        font-weight: 400;
+        color: #353535;
+    }
+    input{
+        background: #fff;
+        border: 1.5px solid var(--primary-color);
+        border-radius: 4px;
+        padding: 5px;
+        outline: 0;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .flex{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn{
+        border: 1px solid var(--primary-color);
+        border-radius: 6px;
+        padding: 8px 15px;
+        width: 180px;
+        color: #666666;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+    }
+    .primary{
+        background-color: var(--primary-color);
+        margin: 40px 0px 30px 0px;
+    }
+    .secondary{
+        margin: 30px 0px 0px 0px;
+    }
+    p{
+        font-size: 12px;
+        font-weight: 400;
+        color: #464646;
+        margin-bottom: 0;
+    }
+    p::before{
+        content:" ";
+        display: block;
+        height: 1px;
+        left: 32%;
+        top: 31.4%;
+        width: 50px;
+        position: absolute;
+        background: #464646;
+    }
+    p::after{
+        content:" ";
+        display: block;
+        height: 1px;
+        right: 32%;
+        top: 31.4%;
+        width: 50px;
+        position: absolute;
+        background: #464646;
+    }
+}

@@ -1,0 +1,31 @@
+<ion-content class="invoice-barcode">
+  <div class="flex">
+    <a href="/invoice-scanner"><img src="/assets/imgs/Close-white.svg"></a>
+    <div class="text-right">
+      <a><img src="/assets/imgs/Flash.svg"></a>
+      <a style="margin-left: 10px;" id="open-modal"><img src="/assets/imgs/i-icon.svg"></a>
+    </div>
+  </div>
+  <div class="barcode">
+    <ngx-barcode-scanner [(value)]="value" [codes]="['code_128', 'ean', 'upc', 'upc_e', 'ean_8']" [errorThreshold]="0.1" (exception)="onError($event)"></ngx-barcode-scanner>
+  </div>
+  <div class="scan">
+    <p>Scan the invoice barcode</p>
+  </div>
+</ion-content>
+
+
+<ion-modal #modal trigger="open-modal" class="model">
+  <ng-template>
+    <div class="flex">
+      <h2>How to scan invoice barcode</h2>
+      <div class="close" (click)="modal.dismiss()"><img src="/assets/imgs/Close.svg"></div>
+    </div>
+    <div class="content">
+      <p>Use the Invoice Barcode Scanner to utilize your phone's camera for barcode recognition.</p>
+      <p>Ensure the barcode is completely within the detection box in the camera view.</p>
+      <p>If lighting is poor, enable the flash using the flash icon.</p>
+      <div class="btn" (click)="modal.dismiss()">Got it</div>
+    </div>
+  </ng-template>
+</ion-modal>

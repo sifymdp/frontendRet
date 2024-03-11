@@ -1,23 +1,31 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, ViewChild } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA, ViewChild, HostListener, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonModal } from '@ionic/angular/standalone';
 import { MenuComponent } from "../menu/menu.component";
-import { IonicSlides } from '@ionic/angular';
+import { IonicSlides, IonPopover, PopoverController } from '@ionic/angular';
 import { NgbTooltip, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { PopoverComponent } from '../popover/popover.component';
+import { CommandsComponent } from '../commands/commands.component';
 
 @Component({
     selector: 'app-categories',
     templateUrl: './categories.page.html',
     styleUrls: ['./categories.page.scss'],
     standalone: true,
-    imports: [ CommonModule, FormsModule, MenuComponent, IonModal, NgbTooltipModule],
+    imports: [ CommonModule, FormsModule, MenuComponent, NgbTooltipModule, IonModal],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CategoriesPage implements OnInit {
 
   @ViewChild(IonModal) modal?: IonModal;
-  @ViewChild('tleft') public tooltip!: NgbTooltip;
+  @ViewChild('popover') popover: any;
+
+  @ViewChild('micButton', { read: ElementRef, static: true }) micButton!: ElementRef;
+
+  isOpen = false;
+
+  isArrow = true
 
   swiperModules = [IonicSlides];
   showMore:boolean = false;
@@ -187,20 +195,75 @@ export class CategoriesPage implements OnInit {
     },
   ];
 
-  constructor() { }
+  private pressTimer: any;
+
+  constructor(private popoverController: PopoverController) { }
 
   ngOnInit() {
   }
 
-  open(){
-    this.tooltip.open();
+  showMenu(event: any){
+    console.log('Menu showed!')
   }
-  ngAfterViewInit() {
-    setTimeout(() => this.open(),2000);
- }
+
+  handleTouchStart(event: TouchEvent){
+    this.pressTimer = setTimeout(() => {
+      this.onLongPress();
+    }, 2000);
+  }
+
+  handleTouchEnd(event: TouchEvent) {
+    clearTimeout(this.pressTimer);
+  }
+
+  onContextMenu(event: Event) {
+    event.preventDefault();
+  }
+
+  async onLongPress() {
+    const popover = await this.popoverController.create({
+      component: CommandsComponent,
+      cssClass: 'commands',
+      translucent: true,
+      event: event,
+      reference: 'trigger',
+      mode: 'ios',
+      side: 'start',
+      alignment: 'start',
+      backdropDismiss: true,
+      showBackdrop: true
+    });
+    await popover.present();
+    // console.log('Long press detected!');
+  }
+
+  async presentPopover(event: Event) {
+    const popover = await this.popoverController.create({
+      component: PopoverComponent,
+      cssClass: 'popover-position-adjustment',
+      translucent: true,
+      event: event,
+      reference: 'trigger',
+      mode: 'ios',
+      side: 'start',
+      alignment: 'start',
+      backdropDismiss: true,
+      showBackdrop: true
+    });
+    await popover.present();
+    setTimeout(() => popover.dismiss(),3000)
+  }
 
   showMoreDesc(ev: any){
     this.showMore = !this.showMore;
+    if(this.micButton){
+      setTimeout(() => {
+        const element = this.micButton.nativeElement;
+        const rect = element.getBoundingClientRect()
+        const event = { target: { getBoundingClientRect: () => rect } } as any;
+        this.presentPopover(event);
+      },0)
+    }
   }
 
   reset(event: any){

@@ -106,4 +106,12 @@ export const routes: Routes = [
     path: 'search-results',
     loadComponent: () => import('./component/search-results/search-results.page').then( m => m.SearchResultsPage)
   },
+  {
+    path: 'invoice-scanner',
+    loadComponent: () => import('./component/invoice-scanner/invoice-scanner.page').then( m => m.InvoiceScannerPage)
+  },
+  {
+    path: 'invoice-barcode',
+    loadComponent: () => import('./component/invoice-barcode/invoice-barcode.page').then( m => m.InvoiceBarcodePage)
+  },
 ];

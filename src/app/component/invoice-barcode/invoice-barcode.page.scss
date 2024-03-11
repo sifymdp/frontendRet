@@ -1,0 +1,106 @@
+ion-content{
+    background-color: #212121;
+    --ion-background-color: #212121;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --padding-top: 20px;
+    --padding-bottom: 40px
+}
+.header-md {
+    box-shadow: none;
+}
+.head-icon{
+    padding-right: 15px;
+}
+ion-title{
+    color: #353535;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 5px;
+}
+.sc-ion-searchbar-md-h {
+    --border-radius: 22px;
+    --box-shadow: none;
+}
+ion-label{
+    font-size: 16px;
+    font-weight: 700;
+    color: #353535;
+}
+ion-text{
+    font-size: 12px;
+    font-weight: 400;
+    color: #353535;
+}
+a{
+    color: #353535;
+    text-decoration: none;
+    &:hover{
+        color: #353535;
+        text-decoration: none;
+    }
+}
+.invoice-barcode{
+    .flex{
+        justify-content: space-between;
+        align-items: center;
+    }
+    .barcode{
+        display: flex;
+        flex-direction: column;
+        height: 85%;
+        justify-content: center;
+        align-items: center;
+    }
+    .scan{
+        p{
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+            color: #EDEDED;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 6px;
+        }
+    }
+}
+.model{
+    --height: 42%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    .flex{
+        justify-content: space-between;
+        padding: 10px 15px 10px 15px;
+    }
+    .content{
+        padding: 0px 15px 15px 15px;
+    }
+    h2{
+        font-size: 16px;
+        font-weight: 700;
+        color: #1D1D1D;
+        margin-bottom: 0;
+    }
+    p{
+        font-size: 14px;
+        font-weight: 400;
+        color: #353535;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    .btn{
+        font-size: 14px;
+        font-weight: 700;
+        color: #464646;
+        text-align: center;
+    }
+}
+ion-modal > .ion-page {
+    height: auto;
+}
+ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+}

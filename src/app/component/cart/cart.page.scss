@@ -192,10 +192,10 @@ a{
             font-weight: 400;
             color: #353535;
             cursor: pointer;
-            text-decoration: none;
+            text-decoration: underline;
             &:hover{
                 color: #353535;
-                text-decoration: none;
+                text-decoration: underline;
             }
         }
     }
