@@ -12,12 +12,13 @@ import { IonModal } from '@ionic/angular/standalone';
 export class CommandsComponent  implements OnInit {
 
   @ViewChild(IonModal) modal?: IonModal;
-  @Output()
-onClose: EventEmitter<boolean> = new EventEmitter();
+  @Output() onClose: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.modal?.present()
+  }
 
   close(){
     this.onClose.emit(true);

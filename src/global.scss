@@ -52,22 +52,22 @@ h1, h2, h3, h4, h5, h6, p{
 }
 ion-popover.popover-position-adjustment {
     --offset-x: -4%;
-    --offset-y: -27%;
+    --offset-y: -30%;
     --width: 250px;
 }
-// .popover-position-adjustment::after{
-//     content: "";
-//   position: absolute;
-//   right: 11%;
-//   bottom: 20%;
-//   margin-left: -5px;
-//   border-width: 8px;
-//   border-style: solid;
-//   border-color: rgba(111,111,111,0.2) transparent transparent;
-// }
+.popover-position-adjustment::after{
+    content: "";
+  position: absolute;
+  z-index: 20007;
+  right: 10%;
+  bottom: 19%;
+  margin-left: -5px;
+  border-width: 12px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
 
 ion-popover.commands {
     --offset-x: 4%;
-    // --offset-y: -20%;
     --width: 308px;
 }

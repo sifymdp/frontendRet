@@ -75,13 +75,13 @@ data = {
         scales: {
           y: {
             ticks: {
-              color: '#1D1D1D',
+              color: '#000000',
             },
             beginAtZero: true,
           },
           x: {
             ticks: {
-              color: '#1D1D1D',
+              color: '#000000',
             },
           }
         },

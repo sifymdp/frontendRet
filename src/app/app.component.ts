@@ -19,6 +19,7 @@ register();
 export class AppComponent implements OnInit {
 
   tab: any;
+  class: any;
   
   constructor(private router: Router) {}
 
