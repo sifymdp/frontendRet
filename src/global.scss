@@ -31,9 +31,24 @@
     font-family: "Helvetica Neue", sans-serif;
 }
 .tab-selected{
-    .filled{
-        fill: var(--primary-color);
+    --color-selected: #1d1d1d;
+    ion-label{
+        color: #1d1d1d;
+        font-weight: 700;
     }
+    .filled{
+        fill: #1d1d1d;
+        stroke: #1d1d1d;
+    }
+    // --color-selected: var(--primary-color);
+    // ion-label{
+    //     color: var(--primary-color);
+    //     font-weight: 700;
+    // }
+    // .filled{
+    //     fill: var(--primary-color);
+    //     stroke: var(--primary-color);
+    // }
 }
 
 h1, h2, h3, h4, h5, h6, p{
